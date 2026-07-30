@@ -1805,6 +1805,14 @@ img {
   color: rgba(255, 255, 255, .85)
 }
 
+.uc-callout .uc-arrow-link {
+  color: #fff;
+}
+
+.uc-callout .uc-arrow-link:hover {
+  color: var(--uc-gold);
+}
+
 .uc-steps {
   counter-reset: step
 }
