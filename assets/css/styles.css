@@ -141,18 +141,25 @@ img {
 }
 
 .uc-arrow-link {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
+  display: inline;
   font-weight: 600;
   color: var(--uc-primary);
   border-bottom: 1px solid transparent;
   transition: all .2s ease;
 }
 
+.uc-arrow-link i {
+  display: inline-block;
+  margin-left: 0.3rem;
+  transition: transform 0.2s ease;
+}
+
 .uc-arrow-link:hover {
   color: var(--uc-gold-2);
-  gap: .7rem;
+}
+
+.uc-arrow-link:hover i {
+  transform: translateX(0.3rem);
 }
 
 .uc-arrow-link--dark {
@@ -2318,38 +2325,44 @@ img {
   display: inline-block;
   background-color: var(--uc-gold);
   color: #000;
-  font-weight: 700;
-  font-size: 0.8rem;
+  font-family: var(--uc-ui);
+  font-weight: 600;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  padding: 0.4rem 1rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 50px;
   box-shadow: 0 4px 15px rgba(240, 178, 58, 0.3);
 }
 
 .uc-program-title {
   font-family: var(--uc-serif);
-  font-weight: 700;
+  font-weight: 400 !important;
+  font-size: 3.25rem !important;
   line-height: 1.1;
   color: #fff !important;
   text-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .uc-program-subtitle {
-  font-size: 1.25rem;
+  font-family: var(--uc-ui);
+  font-size: 1.15rem;
   font-weight: 300;
-  line-height: 1.6;
+  line-height: 1.7;
   color: rgba(255,255,255,0.85) !important;
 }
 
 .uc-btn-hero-primary {
   background-color: var(--uc-gold);
   color: #000;
-  border: 2px solid var(--uc-gold);
+  border: 1px solid var(--uc-gold);
   border-radius: 50px;
-  font-weight: 700;
+  font-family: var(--uc-ui);
+  font-weight: 500;
+  font-size: 0.8rem !important;
+  padding: 0.65rem 1.75rem !important;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   transition: all 0.3s ease;
 }
 
@@ -2364,11 +2377,14 @@ img {
 .uc-btn-hero-ghost {
   background-color: transparent;
   color: #fff !important;
-  border: 2px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255,255,255,0.4);
   border-radius: 50px;
-  font-weight: 700;
+  font-family: var(--uc-ui);
+  font-weight: 500;
+  font-size: 0.8rem !important;
+  padding: 0.65rem 1.75rem !important;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   transition: all 0.3s ease;
 }
 
@@ -2418,27 +2434,39 @@ img {
 }
 
 .uc-stat-label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--uc-text-muted);
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+  font-family: var(--uc-ui) !important;
+  font-size: 0.75rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  color: var(--uc-muted) !important;
+  font-weight: 500 !important;
+  margin-bottom: 0.35rem;
 }
 
 .uc-stat-value {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--uc-primary);
+  font-family: var(--uc-ui) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: var(--uc-primary) !important;
+  text-transform: none !important;
 }
 
 /* Overview Section */
 .uc-section-title {
-  font-family: var(--uc-serif);
-  font-size: 2.5rem;
+  font-family: var(--uc-ui);
+  font-size: 1.85rem;
+  font-weight: 300;
+  letter-spacing: -0.01em;
   color: var(--uc-primary);
   position: relative;
   padding-bottom: 1rem;
+}
+
+/* Sidebar Overrides for Elegance */
+.position-sticky h5.mb-4 {
+  font-family: var(--uc-ui) !important;
+  font-weight: 400 !important;
+  font-size: 1.3rem !important;
 }
 
 .uc-section-title::after {
@@ -2451,10 +2479,52 @@ img {
   background-color: var(--uc-gold);
 }
 
+/* Program Editorial Text & Rich Content */
+.uc-rich-heading {
+  font-family: var(--uc-ui);
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--uc-primary);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Ensure strong tags inside rich headings don't override the elegant weight */
+.uc-rich-heading strong,
+.uc-rich-heading b {
+  font-weight: inherit !important;
+}
 .uc-editorial-text {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  color: #4a4a4a;
+  font-family: var(--uc-ui);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--uc-body);
+  margin-bottom: 1.25rem;
+}
+
+.uc-rich-list {
+  font-family: var(--uc-ui);
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--uc-body);
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.uc-rich-list li {
+  margin-bottom: 0.5rem;
+}
+
+.uc-rich-heading {
+  font-family: var(--uc-ui);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--uc-ink);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Feature Boxes */
@@ -3118,3 +3188,868 @@ h1, h2, h3, h4, h5, h6, .uc-display, .uc-h2, .uc-h3 {
 body {
   font-family: var(--uc-sans);
 }
+
+/* ==========================================================================
+   PERSON / LEADERSHIP CARD SYSTEM
+   Used on: patron-message, chancellor-message, vc-message,
+            pro-rector-message, dean-message
+   ========================================================================== */
+
+/* Base person card (grid view in office/team pages) */
+.uc-person {
+  background: #fff;
+  border: 1px solid var(--uc-line);
+  border-radius: var(--uc-radius);
+  padding: 1.75rem 1.5rem 1.5rem;
+  text-align: center;
+  transition: all .25s ease;
+}
+
+.uc-person:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--uc-shadow);
+  border-color: var(--uc-gold);
+}
+
+/* Initials avatar — fallback when no photo */
+.uc-person__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--uc-primary), var(--uc-primary-light));
+  color: #fff;
+  font-family: var(--uc-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+
+/* Lead variant — larger, horizontal layout used on message pages */
+.uc-person--lead {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: #fff;
+  border: 1px solid var(--uc-line);
+  border-radius: var(--uc-radius-lg);
+  padding: 2.25rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--uc-shadow-sm);
+  text-align: left;
+}
+
+/* Lead avatar — larger initials circle */
+.uc-person--lead .uc-person__avatar {
+  width: 120px;
+  height: 120px;
+  font-size: 2rem;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+/* ---- Portrait photo — premium framed style ---- */
+.uc-person__photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid var(--uc-gold);
+  box-shadow:
+    0 0 0 5px rgba(240, 178, 58, .15),
+    0 12px 32px -8px rgba(34, 35, 98, .3);
+  flex-shrink: 0;
+  transition: box-shadow .3s ease, transform .3s ease;
+  display: block;
+}
+
+.uc-person__photo:hover {
+  transform: scale(1.03);
+  box-shadow:
+    0 0 0 6px rgba(240, 178, 58, .25),
+    0 20px 40px -10px rgba(34, 35, 98, .35);
+}
+
+/* Lead layout: make photo same size as large avatar */
+.uc-person--lead .uc-person__photo {
+  width: 140px;
+  height: 140px;
+}
+
+.uc-person__name {
+  font-family: var(--uc-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--uc-ink);
+  margin-bottom: .25rem;
+}
+
+.uc-person__role {
+  font-size: .92rem;
+  color: var(--uc-primary-light);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.uc-person__meta {
+  margin-top: .85rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  font-size: .88rem;
+  color: var(--uc-muted);
+}
+
+.uc-person__meta a {
+  color: var(--uc-primary);
+}
+
+.uc-person__meta a:hover {
+  color: var(--uc-gold-2);
+}
+
+/* ---- Quote block used on message pages ---- */
+.uc-quote {
+  background: linear-gradient(135deg, var(--uc-cream-2) 0%, #fff 100%);
+  border-left: 4px solid var(--uc-gold);
+  border-radius: 0 var(--uc-radius) var(--uc-radius) 0;
+  padding: 2rem 2rem 1.5rem 2.5rem;
+  margin: 2rem 0;
+  font-family: var(--uc-serif);
+  font-size: 1.15rem;
+  color: var(--uc-ink);
+  font-style: italic;
+  line-height: 1.65;
+  position: relative;
+}
+
+.uc-quote::before {
+  content: '\201C';
+  font-size: 5rem;
+  line-height: 0;
+  position: absolute;
+  top: 2.5rem;
+  left: .6rem;
+  color: var(--uc-gold);
+  opacity: .35;
+  font-family: Georgia, serif;
+}
+
+.uc-quote__by {
+  margin-top: 1.25rem;
+  font-style: normal;
+  font-family: var(--uc-sans);
+  font-size: .9rem;
+}
+
+.uc-quote__by strong {
+  display: block;
+  color: var(--uc-primary);
+  font-weight: 700;
+}
+
+.uc-quote__by span {
+  color: var(--uc-muted);
+}
+
+/* ---- Rich content heading ---- */
+.uc-rich-heading {
+  font-family: var(--uc-serif);
+  color: var(--uc-primary);
+  font-weight: 700;
+  margin: 2.5rem 0 1rem;
+}
+
+/* ---- Stats bar (about page) ---- */
+.uc-stats-bar {
+  background: var(--uc-cream-2);
+  border-radius: var(--uc-radius-lg);
+  overflow: hidden;
+}
+
+.uc-stat-item {
+  padding: 2rem 1.5rem;
+  border-right: 1px solid var(--uc-line);
+  text-align: center;
+}
+
+.uc-stat-item:last-child {
+  border-right: none;
+}
+
+.uc-stat-icon {
+  font-size: 1.75rem;
+  color: var(--uc-gold);
+  margin-bottom: .5rem;
+}
+
+.uc-stat-value {
+  font-family: var(--uc-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--uc-primary);
+}
+
+.uc-stat-label {
+  font-size: .82rem;
+  color: var(--uc-muted);
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-top: .25rem;
+}
+
+/* Responsive — stack person--lead on small screens */
+@media (max-width: 575.98px) {
+  .uc-person--lead {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .uc-person--lead .uc-person__photo,
+  .uc-person--lead .uc-person__avatar {
+    margin-bottom: .5rem;
+  }
+
+  .uc-person__meta {
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   DIGNITARY CARD — Premium editorial presenter for university leadership
+   A full-width banner that reads like an official institutional nameplate.
+   Replaces a profile picture for the Patron, Chairman, Rector, etc.
+   ========================================================================== */
+
+.uc-dignitary-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  border-radius: var(--uc-radius-lg);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  box-shadow:
+    0 2px 0 var(--uc-gold),          /* gold top accent line */
+    0 30px 60px -20px rgba(34, 35, 98, .22);
+  border: 1px solid rgba(34, 35, 98, .12);
+}
+
+/* ---- Left monogram panel ---- */
+.uc-dignitary-card__monogram-panel {
+  background: linear-gradient(160deg, #1a1c52 0%, var(--uc-primary) 55%, #2b2d7a 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  overflow: hidden;
+  min-height: 200px;
+}
+
+/* Subtle radial glow behind monogram */
+.uc-dignitary-card__monogram-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(240, 178, 58, .15), transparent 70%);
+  pointer-events: none;
+}
+
+/* Top-left ornamental corner */
+.uc-dignitary-card__monogram-panel::after {
+  content: "";
+  position: absolute;
+  top: 10px; left: 10px;
+  width: 36px; height: 36px;
+  border-top: 2px solid rgba(240, 178, 58, .5);
+  border-left: 2px solid rgba(240, 178, 58, .5);
+  border-radius: 2px 0 0 0;
+}
+
+/* Bottom-right ornamental corner (via child element trick) */
+.uc-dignitary-card__corner {
+  position: absolute;
+  bottom: 10px; right: 10px;
+  width: 36px; height: 36px;
+  border-bottom: 2px solid rgba(240, 178, 58, .5);
+  border-right: 2px solid rgba(240, 178, 58, .5);
+  border-radius: 0 0 2px 0;
+}
+
+/* The large Cinzel monogram */
+.uc-dignitary-card__initials {
+  font-family: var(--uc-serif);
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--uc-gold);
+  letter-spacing: .1em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 20px rgba(240, 178, 58, .35);
+}
+
+/* Thin gold rule below initials */
+.uc-dignitary-card__rule {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--uc-gold), transparent);
+  margin: 1rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Right information panel ---- */
+.uc-dignitary-card__info {
+  background: #fff;
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-left: 1px solid rgba(34, 35, 98, .08);
+}
+
+/* Subtle diagonal pattern in background */
+.uc-dignitary-card__info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(34, 35, 98, .018) 18px,
+      rgba(34, 35, 98, .018) 19px
+    );
+  pointer-events: none;
+}
+
+/* Role badge — e.g. "PATRON" */
+.uc-dignitary-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: linear-gradient(135deg, var(--uc-primary), var(--uc-primary-light));
+  color: var(--uc-gold);
+  font-family: var(--uc-serif);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .35rem .9rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
+/* Name */
+.uc-dignitary-card__name {
+  font-family: var(--uc-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--uc-ink);
+  letter-spacing: -.01em;
+  line-height: 1.15;
+  margin: 0 0 .6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title / Designation */
+.uc-dignitary-card__title {
+  font-family: var(--uc-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--uc-primary-light);
+  margin-bottom: .25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Institution line */
+.uc-dignitary-card__institution {
+  font-family: var(--uc-sans);
+  font-size: .9rem;
+  color: var(--uc-muted);
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional meta (email, phone) */
+.uc-dignitary-card__meta {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--uc-line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.5rem;
+  font-size: .875rem;
+  color: var(--uc-muted);
+  position: relative;
+  z-index: 1;
+}
+
+.uc-dignitary-card__meta a {
+  color: var(--uc-primary);
+  font-weight: 500;
+}
+
+.uc-dignitary-card__meta a:hover {
+  color: var(--uc-gold-2);
+}
+
+.uc-dignitary-card__meta i {
+  color: var(--uc-gold);
+  margin-right: .3rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767.98px) {
+  .uc-dignitary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .uc-dignitary-card__monogram-panel {
+    min-height: 140px;
+    padding: 2rem 1.5rem 1.5rem;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .uc-dignitary-card__rule {
+    display: none;
+  }
+
+  .uc-dignitary-card__initials {
+    font-size: 3rem;
+  }
+
+  .uc-dignitary-card__info {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Hub Cards (e.g., Short Courses)
+   ========================================================================== */
+.uc-hub-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2.5rem;
+  background: var(--uc-white);
+  border: 1px solid var(--uc-line);
+  border-radius: var(--uc-radius);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+.uc-hub-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--uc-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.uc-hub-card:hover {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.uc-hub-card__chip:last-child {
+  background: transparent;
+  padding: 0;
+  margin-left: auto;
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--uc-gold);
+  letter-spacing: .1em;
+  line-height: 1;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 20px rgba(240, 178, 58, .35);
+}
+
+/* Thin gold rule below initials */
+.uc-dignitary-card__rule {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--uc-gold), transparent);
+  margin: 1rem auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Right information panel ---- */
+.uc-dignitary-card__info {
+  background: #fff;
+  padding: 2.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-left: 1px solid rgba(34, 35, 98, .08);
+}
+
+/* Subtle diagonal pattern in background */
+.uc-dignitary-card__info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(34, 35, 98, .018) 18px,
+      rgba(34, 35, 98, .018) 19px
+    );
+  pointer-events: none;
+}
+
+/* Role badge — e.g. "PATRON" */
+.uc-dignitary-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: linear-gradient(135deg, var(--uc-primary), var(--uc-primary-light));
+  color: var(--uc-gold);
+  font-family: var(--uc-serif);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .35rem .9rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+}
+
+/* Name */
+.uc-dignitary-card__name {
+  font-family: var(--uc-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--uc-ink);
+  letter-spacing: -.01em;
+  line-height: 1.15;
+  margin: 0 0 .6rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title / Designation */
+.uc-dignitary-card__title {
+  font-family: var(--uc-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--uc-primary-light);
+  margin-bottom: .25rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Institution line */
+.uc-dignitary-card__institution {
+  font-family: var(--uc-sans);
+  font-size: .9rem;
+  color: var(--uc-muted);
+  position: relative;
+  z-index: 1;
+}
+
+/* Optional meta (email, phone) */
+.uc-dignitary-card__meta {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--uc-line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem 1.5rem;
+  font-size: .875rem;
+  color: var(--uc-muted);
+  position: relative;
+  z-index: 1;
+}
+
+.uc-dignitary-card__meta a {
+  color: var(--uc-primary);
+  font-weight: 500;
+}
+
+.uc-dignitary-card__meta a:hover {
+  color: var(--uc-gold-2);
+}
+
+.uc-dignitary-card__meta i {
+  color: var(--uc-gold);
+  margin-right: .3rem;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 767.98px) {
+  .uc-dignitary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .uc-dignitary-card__monogram-panel {
+    min-height: 140px;
+    padding: 2rem 1.5rem 1.5rem;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: flex-start;
+  }
+
+  .uc-dignitary-card__rule {
+    display: none;
+  }
+
+  .uc-dignitary-card__initials {
+    font-size: 3rem;
+  }
+
+  .uc-dignitary-card__info {
+    padding: 1.75rem 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Short Courses Custom Hub Cards (Minimal Elegant Version)
+   ========================================================================== */
+.uc-simple-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--uc-white);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.uc-simple-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--uc-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+  z-index: -1;
+}
+
+.uc-simple-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0,0,0,0.08);
+}
+
+.uc-simple-card:hover::before {
+  transform: scaleX(1);
+}
+
+.uc-simple-card__img-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.uc-simple-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.uc-simple-card:hover .uc-simple-card__img {
+  transform: scale(1.05);
+}
+
+.uc-simple-card__content {
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.uc-simple-card__eyebrow {
+  font-family: var(--uc-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--uc-gold-2);
+  margin-bottom: 1.5rem;
+}
+
+.uc-simple-card__title {
+  font-family: var(--uc-ui);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--uc-primary);
+  line-height: 1.35;
+  margin-bottom: 2rem;
+  transition: color 0.3s ease;
+}
+
+.uc-simple-card:hover .uc-simple-card__title {
+  color: var(--uc-gold-2);
+}
+
+.uc-simple-card__footer {
+  margin-top: auto;
+}
+
+.uc-simple-card__btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--uc-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--uc-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.uc-simple-card__btn i {
+  margin-left: 8px;
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.uc-simple-card:hover .uc-simple-card__btn {
+  color: var(--uc-gold-2);
+}
+
+.uc-simple-card:hover .uc-simple-card__btn i {
+  transform: translateX(5px);
+}
+
+/* ==========================================================================
+   Call to Action (CTA) 
+   ========================================================================== */
+.uc-cta {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--uc-primary) 0%, #121235 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.uc-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top right, rgba(241, 178, 58, 0.15), transparent 60%);
+  pointer-events: none;
+}
+
+.uc-cta h2 {
+  font-family: var(--uc-serif);
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--uc-white);
+  margin-bottom: 1rem;
+}
+
+.uc-cta h2 span {
+  color: var(--uc-gold);
+}
+
+.uc-cta p {
+  font-family: var(--uc-ui);
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+
+/* ==========================================================================
+   Faculty Profiles Fix
+   ========================================================================== */
+.uc-rich .uc-faculty-avatar {
+  width: 140px !important;
+  height: 140px !important;
+  object-fit: cover;
+  border-radius: 50% !important;
+  border: 3px solid var(--uc-gold);
+  margin: 2rem auto 1rem auto !important;
+  display: block;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uc-rich .uc-faculty-avatar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(241, 178, 58, 0.3);
+}
+
+/* Make sure the links wrapping the images don't disrupt flow */
+.uc-rich a:has(> .uc-faculty-avatar) {
+  display: block;
+  text-align: center;
+}
+
+/* Align text under the avatars if they directly follow */
+.uc-rich a:has(> .uc-faculty-avatar) + a,
+.uc-rich .uc-faculty-avatar + a,
+.uc-rich .uc-faculty-avatar + h3 {
+  display: block;
+  text-align: center;
+  font-family: var(--uc-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--uc-primary);
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.uc-rich .uc-faculty-avatar + h3 > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.uc-rich a:has(> .uc-faculty-avatar) + a + a,
+.uc-rich a:has(> .uc-faculty-avatar) + h3 > a,
+.uc-rich a:has(> .uc-faculty-avatar) + a + h3 > a,
+.uc-rich .uc-faculty-avatar + a + a,
+.uc-rich .uc-faculty-avatar + h3 + h3 {
+  display: block;
+  text-align: center;
+  font-family: var(--uc-ui);
+  font-size: 0.95rem;
+  color: var(--uc-text-light);
+  margin-bottom: 2rem;
+  text-decoration: none;
+}
+
+
+

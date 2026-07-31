@@ -556,6 +556,7 @@
 
         courses.forEach(course => {
           const category = course.getAttribute('data-category') || '';
+          const categoryArray = category.split(' ');
           
           if (activeGroups.length === 0) {
             course.style.display = '';
@@ -565,7 +566,7 @@
 
           // AND logic between groups, OR logic within groups
           const passesAllGroups = activeGroups.every(group => {
-            return groupedValues[group].some(val => category.includes(val));
+            return groupedValues[group].some(val => categoryArray.includes(val));
           });
 
           if (passesAllGroups) {
@@ -578,8 +579,6 @@
 
         if (resultsCount) {
           resultsCount.innerHTML = `Results: <strong>${visibleCount}</strong> (of ${totalCourses} total)`;
-        }
-      } total)`;
         }
       }
 
