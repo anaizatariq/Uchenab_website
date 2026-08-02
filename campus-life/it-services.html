@@ -18,7 +18,8 @@
 <link rel="stylesheet" href="../assets/css/styles.css"/>
 </head>
 <body>
-<div class="uc-topbar d-none d-lg-block">
+  <!-- ============ TOP UTILITY BAR ============ -->
+  <div class="uc-topbar d-none d-lg-block">
     <div class="container-fluid px-4 px-xl-5 d-flex align-items-center justify-content-between">
       <div class="uc-topbar__left small">
         <span><i class="bi bi-geo-alt"></i> Adjacent Chenab Bridge, G.T. Road, Gujrat</span>
@@ -28,17 +29,56 @@
         <span><i class="bi bi-envelope"></i> info@uchenab.edu.pk</span>
       </div>
       <div class="uc-topbar__right small d-flex align-items-center gap-3">
-        <a href="https://sis.uchenab.edu.pk/">Student Portal</a>
-        <a href="http://fca.uchenab.edu.pk/">Faculty Portal</a>
-        <a href="../about/careers.html">Careers</a>
-        <a href="../about/alumni.html">Alumni</a>
-        <span class="uc-divider"></span>
-        <div class="d-flex align-items-center gap-2 uc-social">
-          <a href="https://www.facebook.com/uchenab.grt" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/uchenab_official/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/the-university-of-chenab-gujrat/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.youtube.com/@uchenab_grt" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+
+        <a href="../career/index.html" class="uc-topbar-link">Careers</a>
+        <a href="../alumni/index.html" class="uc-topbar-link">Alumni</a>
+
+        <span class="uc-divider opacity-25"></span>
+
+        <div class="d-flex align-items-center gap-3 uc-social">
+          <a href="https://www.facebook.com/uchenab.grt" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/uchenab_official/" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/the-university-of-chenab-gujrat/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/@uchenab_grt" target="_blank" rel="noopener" aria-label="YouTube"><i
+              class="bi bi-youtube"></i></a>
         </div>
+
+        <span class="uc-divider opacity-25"></span>
+
+        <!-- Premium Portals Dropdown as a highlighted Button -->
+        <div class="uc-topbar-dropdown ms-2">
+          <button class="uc-portals-trigger">
+            UChenab Portals <i class="bi bi-chevron-down ms-1"></i>
+          </button>
+          <div class="uc-dropdown-menu shadow-lg">
+            <div class="d-flex">
+              <!-- Students Column -->
+              <div class="uc-dropdown-col border-end border-light">
+                <h6 class="uc-dropdown-header">Students & Applicants</h6>
+                <a class="uc-dropdown-item" href="https://sis.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-person-badge"></i> Student Portal (SIS)</a>
+                <a class="uc-dropdown-item" href="https://admissions.uchenab.edu.pk/UCH.aspx" target="_blank"><i
+                    class="bi bi-file-earmark-text"></i> Admission Portal</a>
+              </div>
+              <!-- Admin Column -->
+              <div class="uc-dropdown-col">
+                <h6 class="uc-dropdown-header">Staff & Administration</h6>
+                <a class="uc-dropdown-item" href="https://fca.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-easel"></i> Faculty Portal (FCA)</a>
+                <a class="uc-dropdown-item" href="https://hms.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-people"></i> HRIMS (Human Resources)</a>
+                <a class="uc-dropdown-item" href="https://ums.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-shield-lock"></i> Admin Portal (UMS)</a>
+                <a class="uc-dropdown-item" href="https://fis.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-wallet2"></i> Financial Info System</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -284,8 +324,37 @@
       </form>
     </div>
   </div>
-</nav><section class="uc-content"><div class="container"><div class='row g-5'><div class='col-lg-8'><div class='uc-rich'><p>We prioritize innovation and inquiry, creating an environment that encourages students to explore their fields deeply. Our commitment to research and development equips students with essential analytical skills, enhancing their academic experience and preparing them for future challenges in their careers. To support this mission, we offer a robust IT infrastructure throughout our campus, ensuring students have the resources they need for academic success.</p>
-<div class='row g-4 my-2'><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-mortarboard'></i><h5>Extensive IT Labs</h5><p>Our campus features six well-equipped IT labs, each stocked with numerous computers, allowing multiple students to work simultaneously.</p></div></div><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-people'></i><h5>Internet Access</h5><p>High-speed internet is readily available in all areas of the campus, enabling students to leverage online resources for their studies.</p></div></div><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-lightbulb'></i><h5>Modern Classrooms</h5><p>Every classroom is fitted with advanced projectors, enhancing the learning experience through audio-visual aids that support diverse teaching methods.</p></div></div><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-shield-check'></i><h5>Dedicated IT Support</h5><p>Our qualified technicians manage the IT infrastructure and provide ongoing support to students. With 24/7 availability, they are committed to resolving any technical issues promptly to minimize disruptions to students’ studies.</p></div></div></div></div></div><div class='col-lg-4'><div class='uc-sidebar'><h4 class='uc-sidebar__title'>Life at UChenab</h4><nav class='d-grid'><a class='uc-sidebar-link' href='index.html'>Overview</a><a class='uc-sidebar-link' href='student-care.html'>Student Care</a><a class='uc-sidebar-link' href='dining.html'>Dining</a><a class='uc-sidebar-link' href='housing.html'>Housing</a><a class='uc-sidebar-link' href='community.html'>Community Engagement &amp; Diversity</a><a class='uc-sidebar-link' href='fitness.html'>Fitness</a><a class='uc-sidebar-link' href='sports.html'>Sports</a><a class='uc-sidebar-link' href='clubs.html'>Student’s Clubs &amp; Societies</a><a class='uc-sidebar-link' href='academics.html'>Academics</a><a class='uc-sidebar-link' href='recreation.html'>Recreational Activities</a><a class='uc-sidebar-link is-active' href='it-services.html'>IT Services</a><a class='uc-sidebar-link' href='security.html'>Security &amp; Safety</a><a class='uc-sidebar-link' href='health.html'>Health Services</a><a class='uc-sidebar-link' href='mosque.html'>Mosque</a><a class='uc-sidebar-link' href='environment.html'>Environment &amp; Locality</a><a class='uc-sidebar-link' href='parking.html'>Parking</a><a class='uc-sidebar-link' href='auditorium.html'>Auditorium &amp; Conference Room</a></nav></div><div class='uc-callout mt-4'><h4>Student Services</h4><p class='mb-0'>info@uchenab.edu.pk<br>053 111 243 622</p></div></div></div></div></section><!-- ============ FOOTER ============ -->
+</nav><section class="uc-content"><div class="container">
+<div class="row g-5 align-items-start">
+  <div class="col-lg-7">
+    <div class="uc-rich">
+
+<p>We prioritize innovation and inquiry, creating an environment that encourages students to explore their fields deeply. Our commitment to research and development equips students with essential analytical skills, enhancing their academic experience and preparing them for future challenges in their careers. To support this mission, we offer a robust IT infrastructure throughout our campus, ensuring students have the resources they need for academic success.</p>
+<div class='row g-4 my-2'><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-mortarboard'></i><h5>Extensive IT Labs</h5><p>Our campus features six well-equipped IT labs, each stocked with numerous computers, allowing multiple students to work simultaneously.</p></div></div><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-people'></i><h5>Internet Access</h5><p>High-speed internet is readily available in all areas of the campus, enabling students to leverage online resources for their studies.</p></div></div><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-lightbulb'></i><h5>Modern Classrooms</h5><p>Every classroom is fitted with advanced projectors, enhancing the learning experience through audio-visual aids that support diverse teaching methods.</p></div></div><div class='col-md-6'><div class='uc-rich-feature-box h-100'><i class='bi bi-shield-check'></i><h5>Dedicated IT Support</h5><p>Our qualified technicians manage the IT infrastructure and provide ongoing support to students. With 24/7 availability, they are committed to resolving any technical issues promptly to minimize disruptions to students’ studies.</p></div></div></div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="position-sticky" style="top:110px;">
+      <figure class="m-0 position-relative overflow-hidden" style="border-radius:1.25rem;">
+        <img src="../assets/img/campus/it-services.png"
+             alt="IT Services and Computer Labs"
+             class="w-100"
+             style="object-fit:cover; display:block; height:520px; width:100%;">
+        <div class="position-absolute bottom-0 start-0 end-0 p-4"
+             style="background:linear-gradient(to top, rgba(10,15,50,0.80) 0%, transparent 100%); border-radius: 0 0 1.25rem 1.25rem;">
+          <p class="mb-0 text-white" style="font-family:var(--uc-serif, 'Playfair Display',serif); font-style:italic; font-size:0.95rem; line-height:1.6; opacity:0.95;">"High-speed internet and modern labs powering the digital campus."</p>
+        </div>
+      </figure>
+      <div class="mt-4 p-4 rounded-3" style="background:var(--uc-primary, #222362); color:#fff;">
+        <h6 class="text-white mb-2" style="font-family:var(--uc-sans);font-weight:700;font-size:0.9rem;letter-spacing:0.05em;text-transform:uppercase;">Student Services</h6>
+        <p class="mb-1 small" style="color:rgba(255,255,255,0.75);">For support and enquiries:</p>
+        <a href="mailto:info@uchenab.edu.pk" class="d-block text-white text-decoration-none fw-semibold small mb-1"><i class="bi bi-envelope me-2"></i>info@uchenab.edu.pk</a>
+        <a href="tel:053111243622" class="d-block text-white text-decoration-none fw-semibold small"><i class="bi bi-telephone me-2"></i>053 111 243 622</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div></section><!-- ============ FOOTER ============ -->
   <footer class="uc-footer">
     <div class="container">
       <div class="row g-5">
@@ -310,8 +379,8 @@
             <li><a href="../about/index.html">About UChenab</a></li>
             <li><a href="../about/leadership.html">Leadership</a></li>
             <li><a href="../about/board-of-governors.html">Board of Governors</a></li>
-            <li><a href="../about/alumni.html">Alumni</a></li>
-            <li><a href="../about/careers.html">Careers</a></li>
+            <li><a href="../alumni/index.html">Alumni</a></li>
+            <li><a href="../career/index.html">Careers</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2">

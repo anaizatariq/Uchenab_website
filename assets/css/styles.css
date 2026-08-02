@@ -298,14 +298,14 @@ img {
 }
 
 .uc-logo {
-  max-height: 65px;
+  max-height: 55px;
   width: auto;
   transition: all 0.3s ease;
 }
 
 @media (min-width: 992px) {
   .uc-logo {
-    max-height: 95px;
+    max-height: 45px;
   }
 }
 
@@ -917,7 +917,8 @@ img {
 
 /* -------------------- Faculties -------------------- */
 .uc-faculties {
-  background: var(--uc-white); /* Pure white ensures perfect flow with the sticky navbar */
+  background: var(--uc-white);
+  /* Pure white ensures perfect flow with the sticky navbar */
   color: var(--uc-ink);
 }
 
@@ -939,13 +940,16 @@ img {
 
 .uc-facultycard {
   display: block;
-  background: var(--uc-white); /* Pure white, extremely easy to the eyes */
-  border: 1px solid rgba(34, 35, 98, 0.12); /* The premium, crisp outline requested */
-  box-shadow: none; /* No resting shadow, perfectly flat and clean like the reference */
+  background: var(--uc-white);
+  /* Pure white, extremely easy to the eyes */
+  border: 1px solid rgba(240, 178, 58, 0.35);
+  /* Subtle golden outline for a premium vibe */
+  box-shadow: none;
+  /* No resting shadow, perfectly flat and clean like the reference */
   border-radius: 12px;
   padding: 3rem 2.5rem;
   height: 100%;
-  transition: all .4s ease;
+  transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
@@ -956,20 +960,22 @@ img {
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: rgba(34, 35, 98, 0.05); /* Soft circular badge matching the reference icon */
-  color: var(--uc-primary); 
+  background: rgba(240, 178, 58, 0.1);
+  /* Soft golden circular badge */
+  color: var(--uc-gold-2);
   font-family: var(--uc-sans);
   font-size: 1.1rem;
   font-weight: 700;
   border-radius: 50%;
   margin-bottom: 1.5rem;
-  transition: all .4s ease;
+  transition: all .4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .uc-facultycard h6 {
   font-family: var(--uc-serif);
   font-size: 1.5rem;
-  color: var(--uc-primary); /* Primary blue heading for strong, elegant contrast */
+  color: var(--uc-primary);
+  /* Primary blue heading for strong, elegant contrast */
   margin-bottom: 1rem;
   line-height: 1.35;
   font-weight: 600;
@@ -984,13 +990,16 @@ img {
 
 .uc-facultycard:hover {
   transform: translateY(-5px);
-  border-color: rgba(34, 35, 98, 0.3); /* Outline becomes slightly more prominent */
-  box-shadow: 0 15px 35px rgba(34, 35, 98, 0.06); /* Whisper-thin shadow on hover */
+  border-color: var(--uc-gold);
+  /* Outline becomes prominent gold */
+  box-shadow: 0 15px 35px rgba(240, 178, 58, 0.15);
+  /* Premium golden shadow on hover */
 }
 
 .uc-facultycard:hover .uc-facultycard__num {
-  background: var(--uc-primary);
-  color: var(--uc-white);
+  background: var(--uc-gold);
+  color: var(--uc-ink);
+  transform: scale(1.1);
 }
 
 /* -------------------- Admissions block -------------------- */
@@ -1066,7 +1075,8 @@ img {
 
 /* -------------------- Life at UChenab -------------------- */
 .uc-life {
-  background: #f0f4f8; /* Soft icy-blue background for extreme ease on the eyes */
+  background: #f0f4f8;
+  /* Soft icy-blue background for extreme ease on the eyes */
 }
 
 .uc-lifecard {
@@ -1098,7 +1108,8 @@ img {
   border-radius: 14px;
   font-size: 1.35rem;
   color: var(--uc-ink);
-  box-shadow: 0 8px 18px rgba(240, 178, 58, 0.45); /* Glowing gold shadow */
+  box-shadow: 0 8px 18px rgba(240, 178, 58, 0.45);
+  /* Glowing gold shadow */
   transition: all .3s ease;
 }
 
@@ -1634,7 +1645,7 @@ img {
 
 /* Content sections */
 .uc-content {
-  padding: 4rem 0
+  padding: 1.5rem 0 4rem
 }
 
 .uc-content h2 {
@@ -2166,6 +2177,7 @@ img {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
 /* ============ ADP TABS SECTION ============ */
 .uc-adp-hub {
   background-color: var(--uc-bg-light);
@@ -2193,15 +2205,15 @@ img {
   color: var(--uc-primary);
   border-left-color: var(--uc-primary);
   font-weight: 600;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 }
 
 .uc-adp-card {
   background: #fff;
   padding: 3rem;
   border-radius: 8px;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.02);
-  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .uc-adp-quick-stats {
@@ -2209,8 +2221,8 @@ img {
   flex-wrap: wrap;
   gap: 1.5rem;
   padding: 1.5rem 0;
-  border-top: 1px solid rgba(0,0,0,0.06);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   margin-bottom: 2rem;
 }
 
@@ -2235,7 +2247,7 @@ img {
 /* Customized Accordion for ADPs */
 .uc-adp-accordion .accordion-item {
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   margin-bottom: 0;
 }
 
@@ -2269,7 +2281,7 @@ img {
 
 .uc-adp-accordion .accordion-body ul li {
   padding: 0.75rem 0;
-  border-bottom: 1px dashed rgba(0,0,0,0.05);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -2294,7 +2306,7 @@ img {
   padding-top: 100px;
   padding-bottom: 80px;
   color: #fff;
-  background: 
+  background:
     linear-gradient(135deg, rgba(34, 35, 98, 0.92) 0%, rgba(10, 10, 30, 0.98) 100%),
     url('../images/campus-bg.jpg') center/cover;
   position: relative;
@@ -2341,7 +2353,7 @@ img {
   font-size: 3.25rem !important;
   line-height: 1.1;
   color: #fff !important;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
 .uc-program-subtitle {
@@ -2349,7 +2361,7 @@ img {
   font-size: 1.15rem;
   font-weight: 300;
   line-height: 1.7;
-  color: rgba(255,255,255,0.85) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 .uc-btn-hero-primary {
@@ -2377,7 +2389,7 @@ img {
 .uc-btn-hero-ghost {
   background-color: transparent;
   color: #fff !important;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 50px;
   font-family: var(--uc-ui);
   font-weight: 500;
@@ -2389,7 +2401,7 @@ img {
 }
 
 .uc-btn-hero-ghost:hover {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-color: #fff;
   color: #fff !important;
   transform: translateY(-3px);
@@ -2405,14 +2417,14 @@ img {
 .uc-stats-bar {
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .uc-stat-item {
   padding: 2.5rem 1rem;
-  border-right: 1px solid rgba(0,0,0,0.05);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2495,6 +2507,7 @@ img {
 .uc-rich-heading b {
   font-weight: inherit !important;
 }
+
 .uc-editorial-text {
   font-family: var(--uc-ui);
   font-size: 1.05rem;
@@ -2567,15 +2580,15 @@ img {
 /* Editorial Accordion for Curriculum */
 .uc-editorial-accordion {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 .uc-editorial-accordion .accordion-item {
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .uc-editorial-accordion .accordion-item:last-child {
@@ -2619,7 +2632,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  border-bottom: 1px dashed rgba(0,0,0,0.08);
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.08);
 }
 
 .uc-module-item:last-child {
@@ -2644,7 +2657,7 @@ img {
 /* Career Cards */
 .uc-career-card {
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   padding: 2rem;
   border-radius: 8px;
   transition: all 0.3s ease;
@@ -2653,7 +2666,7 @@ img {
 
 .uc-career-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-color: var(--uc-gold);
 }
 
@@ -2685,7 +2698,7 @@ img {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -2693,7 +2706,7 @@ img {
 
 .uc-program-hub-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
   border-color: var(--uc-gold);
 }
 
@@ -2794,8 +2807,9 @@ img {
 .uc-sidebar-contact {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
+
 .uc-sidebar-contact::before {
   content: "";
   position: absolute;
@@ -2817,24 +2831,28 @@ img {
   height: 100%;
   transition: all 0.3s ease;
 }
+
 .uc-rich-feature-box:hover {
   box-shadow: 0 15px 35px rgba(34, 35, 98, 0.08);
   border-left-color: var(--uc-gold);
   border-color: rgba(34, 35, 98, 0.4);
   transform: translateY(-5px);
 }
+
 .uc-rich-feature-box i {
   font-size: 2.5rem;
   color: var(--uc-gold);
   margin-bottom: 1.25rem;
   display: block;
 }
+
 .uc-rich-feature-box h5 {
   font-family: var(--uc-serif);
   color: var(--uc-primary);
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
+
 .uc-rich-feature-box p {
   color: var(--uc-text-muted);
   font-size: 0.95rem;
@@ -2862,7 +2880,10 @@ img {
 .uc-career-card::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(135deg, rgba(34, 35, 98, 0.03) 0%, transparent 100%);
   z-index: -1;
   opacity: 0;
@@ -2872,7 +2893,7 @@ img {
 .uc-career-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(34, 35, 98, 0.08);
-  border-color: var(--uc-gold); 
+  border-color: var(--uc-gold);
 }
 
 .uc-career-card:hover::before {
@@ -2929,6 +2950,7 @@ img {
   font-weight: 600;
   transition: all 0.3s ease;
 }
+
 .uc-topbar-btn:hover {
   background: var(--uc-gold);
   border-color: var(--uc-gold);
@@ -2940,7 +2962,7 @@ img {
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   width: 380px;
-  border-left: 1px solid rgba(255,255,255,0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .uc-portals-drawer__cat {
@@ -2970,7 +2992,7 @@ img {
   background: rgba(255, 255, 255, 0.1);
   border-color: var(--uc-gold);
   transform: translateX(-5px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .uc-portal-tile i {
@@ -3021,7 +3043,8 @@ img {
   transition: color 0.3s ease;
 }
 
-.uc-topbar-link:hover, .uc-topbar-dropdown:hover .uc-topbar-link {
+.uc-topbar-link:hover,
+.uc-topbar-dropdown:hover .uc-topbar-link {
   color: #fff;
 }
 
@@ -3032,7 +3055,7 @@ img {
   width: 450px;
   background: #fff;
   border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   visibility: hidden;
   opacity: 0;
   transform: translateY(10px);
@@ -3095,19 +3118,27 @@ img {
    MEGA MENU (MAIN NAVBAR)
    ========================================================================== */
 .uc-nav-mega .dropdown-toggle::after {
-  display: none; /* Hide default bootstrap arrow */
+  display: none;
+  /* Hide default bootstrap arrow */
 }
 
 .uc-mega-menu {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.1) !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1) !important;
   animation: megaDrop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @keyframes megaDrop {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .uc-mega-link {
@@ -3154,7 +3185,9 @@ img {
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(240, 178, 58, 0.1);
 }
-.uc-portals-trigger:hover, .uc-topbar-dropdown:hover .uc-portals-trigger {
+
+.uc-portals-trigger:hover,
+.uc-topbar-dropdown:hover .uc-portals-trigger {
   background: var(--uc-gold);
   border-color: var(--uc-gold);
   color: var(--uc-primary);
@@ -3166,6 +3199,7 @@ img {
 .uc-topbar .uc-dropdown-item {
   color: #4a4a4a !important;
 }
+
 .uc-topbar .uc-dropdown-item:hover {
   color: var(--uc-primary) !important;
 }
@@ -3175,12 +3209,29 @@ img {
    TYPOGRAPHY INJECTIONS (Cinzel, Roboto, Inter)
    ========================================================================== */
 /* Interactive UI elements get the crisp Inter font */
-.uc-btn, .uc-topbar, .uc-nav, .uc-eyebrow, .uc-portals-trigger, .uc-dropdown-menu, .uc-quicklinks, .uc-stats-bar, .uc-program-badge, .uc-back-link {
+.uc-btn,
+.uc-topbar,
+.uc-nav,
+.uc-eyebrow,
+.uc-portals-trigger,
+.uc-dropdown-menu,
+.uc-quicklinks,
+.uc-stats-bar,
+.uc-program-badge,
+.uc-back-link {
   font-family: var(--uc-ui);
 }
 
 /* Ensure all headings use the new Cinzel serif */
-h1, h2, h3, h4, h5, h6, .uc-display, .uc-h2, .uc-h3 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.uc-display,
+.uc-h2,
+.uc-h3 {
   font-family: var(--uc-serif);
 }
 
@@ -3434,7 +3485,8 @@ body {
   overflow: hidden;
   margin-bottom: 2.5rem;
   box-shadow:
-    0 2px 0 var(--uc-gold),          /* gold top accent line */
+    0 2px 0 var(--uc-gold),
+    /* gold top accent line */
     0 30px 60px -20px rgba(34, 35, 98, .22);
   border: 1px solid rgba(34, 35, 98, .12);
 }
@@ -3465,8 +3517,10 @@ body {
 .uc-dignitary-card__monogram-panel::after {
   content: "";
   position: absolute;
-  top: 10px; left: 10px;
-  width: 36px; height: 36px;
+  top: 10px;
+  left: 10px;
+  width: 36px;
+  height: 36px;
   border-top: 2px solid rgba(240, 178, 58, .5);
   border-left: 2px solid rgba(240, 178, 58, .5);
   border-radius: 2px 0 0 0;
@@ -3475,8 +3529,10 @@ body {
 /* Bottom-right ornamental corner (via child element trick) */
 .uc-dignitary-card__corner {
   position: absolute;
-  bottom: 10px; right: 10px;
-  width: 36px; height: 36px;
+  bottom: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
   border-bottom: 2px solid rgba(240, 178, 58, .5);
   border-right: 2px solid rgba(240, 178, 58, .5);
   border-radius: 0 0 2px 0;
@@ -3522,13 +3578,11 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    repeating-linear-gradient(
-      -45deg,
+    repeating-linear-gradient(-45deg,
       transparent,
       transparent 18px,
       rgba(34, 35, 98, .018) 18px,
-      rgba(34, 35, 98, .018) 19px
-    );
+      rgba(34, 35, 98, .018) 19px);
   pointer-events: none;
 }
 
@@ -3653,7 +3707,7 @@ body {
   border-radius: var(--uc-radius);
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
   position: relative;
   overflow: hidden;
 }
@@ -3661,7 +3715,9 @@ body {
 .uc-hub-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 4px;
   background: var(--uc-gold);
   transform: scaleX(0);
@@ -3717,13 +3773,11 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    repeating-linear-gradient(
-      -45deg,
+    repeating-linear-gradient(-45deg,
       transparent,
       transparent 18px,
       rgba(34, 35, 98, .018) 18px,
-      rgba(34, 35, 98, .018) 19px
-    );
+      rgba(34, 35, 98, .018) 19px);
   pointer-events: none;
 }
 
@@ -3856,7 +3910,9 @@ body {
 .uc-simple-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: var(--uc-gold);
   transform: scaleX(0);
@@ -3868,7 +3924,7 @@ body {
 .uc-simple-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-  border-color: rgba(0,0,0,0.08);
+  border-color: rgba(0, 0, 0, 0.08);
 }
 
 .uc-simple-card:hover::before {
@@ -3967,7 +4023,10 @@ body {
 .uc-cta::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: radial-gradient(circle at top right, rgba(241, 178, 58, 0.15), transparent 60%);
   pointer-events: none;
 }
@@ -3993,35 +4052,36 @@ body {
 }
 
 /* ==========================================================================
-   Faculty Profiles Fix
+   Faculty Profiles Best Placement (Pure CSS)
    ========================================================================== */
-.uc-rich .uc-faculty-avatar {
+
+/* Target the image itself to make it a premium circular avatar */
+.uc-rich img.img-fluid.rounded.my-3 {
   width: 140px !important;
   height: 140px !important;
   object-fit: cover;
   border-radius: 50% !important;
-  border: 3px solid var(--uc-gold);
-  margin: 2rem auto 1rem auto !important;
+  border: 3px solid var(--uc-gold) !important;
+  margin: 3rem auto 1rem auto !important;
   display: block;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-.uc-rich .uc-faculty-avatar:hover {
+.uc-rich img.img-fluid.rounded.my-3:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(241, 178, 58, 0.3);
 }
 
-/* Make sure the links wrapping the images don't disrupt flow */
-.uc-rich a:has(> .uc-faculty-avatar) {
+/* If the image is wrapped in an anchor, center the anchor */
+.uc-rich a:has(> img.img-fluid.rounded.my-3) {
   display: block;
   text-align: center;
 }
 
-/* Align text under the avatars if they directly follow */
-.uc-rich a:has(> .uc-faculty-avatar) + a,
-.uc-rich .uc-faculty-avatar + a,
-.uc-rich .uc-faculty-avatar + h3 {
+/* Style the Faculty Name (the link immediately after the image) */
+.uc-rich a:has(> img.img-fluid.rounded.my-3)+a,
+.uc-rich img.img-fluid.rounded.my-3+a,
+.uc-rich img.img-fluid.rounded.my-3+h3 {
   display: block;
   text-align: center;
   font-family: var(--uc-serif);
@@ -4032,16 +4092,17 @@ body {
   text-decoration: none;
 }
 
-.uc-rich .uc-faculty-avatar + h3 > a {
+.uc-rich img.img-fluid.rounded.my-3+h3>a {
   color: inherit;
   text-decoration: none;
 }
 
-.uc-rich a:has(> .uc-faculty-avatar) + a + a,
-.uc-rich a:has(> .uc-faculty-avatar) + h3 > a,
-.uc-rich a:has(> .uc-faculty-avatar) + a + h3 > a,
-.uc-rich .uc-faculty-avatar + a + a,
-.uc-rich .uc-faculty-avatar + h3 + h3 {
+/* Style the Faculty Role (the second link after the image) */
+.uc-rich a:has(> img.img-fluid.rounded.my-3)+a+a,
+.uc-rich a:has(> img.img-fluid.rounded.my-3)+h3>a,
+.uc-rich a:has(> img.img-fluid.rounded.my-3)+a+h3>a,
+.uc-rich img.img-fluid.rounded.my-3+a+a,
+.uc-rich img.img-fluid.rounded.my-3+h3+h3 {
   display: block;
   text-align: center;
   font-family: var(--uc-ui);
@@ -4051,5 +4112,85 @@ body {
   text-decoration: none;
 }
 
+/* ========================================== */
+/* FACULTY CARDS (PREMIUM VIEW)               */
+/* ========================================== */
+.faculty-card {
+  background: #ffffff;
+  border: 1px solid rgba(34, 35, 98, 0.08);
+  border-radius: 1rem;
+  padding: 2.5rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
 
+.faculty-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--uc-gold);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
 
+.faculty-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(34, 35, 98, 0.1);
+  border-color: rgba(34, 35, 98, 0.15);
+}
+
+.faculty-card:hover::before {
+  transform: scaleX(1);
+}
+
+.faculty-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  border: 4px solid #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.faculty-card:hover .faculty-avatar {
+  transform: scale(1.05);
+}
+
+.faculty-name {
+  font-family: var(--uc-serif);
+  color: var(--uc-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.faculty-title {
+  font-family: var(--uc-ui);
+  color: var(--uc-text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.faculty-card .btn {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.faculty-card:hover .btn {
+  opacity: 1;
+  background: var(--uc-primary) !important;
+  color: #fff !important;
+}

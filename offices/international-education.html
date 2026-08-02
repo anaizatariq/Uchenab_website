@@ -18,7 +18,8 @@
 <link rel="stylesheet" href="../assets/css/styles.css"/>
 </head>
 <body>
-<div class="uc-topbar d-none d-lg-block">
+  <!-- ============ TOP UTILITY BAR ============ -->
+  <div class="uc-topbar d-none d-lg-block">
     <div class="container-fluid px-4 px-xl-5 d-flex align-items-center justify-content-between">
       <div class="uc-topbar__left small">
         <span><i class="bi bi-geo-alt"></i> Adjacent Chenab Bridge, G.T. Road, Gujrat</span>
@@ -28,17 +29,56 @@
         <span><i class="bi bi-envelope"></i> info@uchenab.edu.pk</span>
       </div>
       <div class="uc-topbar__right small d-flex align-items-center gap-3">
-        <a href="https://sis.uchenab.edu.pk/">Student Portal</a>
-        <a href="http://fca.uchenab.edu.pk/">Faculty Portal</a>
-        <a href="../about/careers.html">Careers</a>
-        <a href="../about/alumni.html">Alumni</a>
-        <span class="uc-divider"></span>
-        <div class="d-flex align-items-center gap-2 uc-social">
-          <a href="https://www.facebook.com/uchenab.grt" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/uchenab_official/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/the-university-of-chenab-gujrat/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.youtube.com/@uchenab_grt" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+
+        <a href="../career/index.html" class="uc-topbar-link">Careers</a>
+        <a href="../alumni/index.html" class="uc-topbar-link">Alumni</a>
+
+        <span class="uc-divider opacity-25"></span>
+
+        <div class="d-flex align-items-center gap-3 uc-social">
+          <a href="https://www.facebook.com/uchenab.grt" target="_blank" rel="noopener" aria-label="Facebook"><i
+              class="bi bi-facebook"></i></a>
+          <a href="https://www.instagram.com/uchenab_official/" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="bi bi-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/the-university-of-chenab-gujrat/" target="_blank" rel="noopener"
+            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/@uchenab_grt" target="_blank" rel="noopener" aria-label="YouTube"><i
+              class="bi bi-youtube"></i></a>
         </div>
+
+        <span class="uc-divider opacity-25"></span>
+
+        <!-- Premium Portals Dropdown as a highlighted Button -->
+        <div class="uc-topbar-dropdown ms-2">
+          <button class="uc-portals-trigger">
+            UChenab Portals <i class="bi bi-chevron-down ms-1"></i>
+          </button>
+          <div class="uc-dropdown-menu shadow-lg">
+            <div class="d-flex">
+              <!-- Students Column -->
+              <div class="uc-dropdown-col border-end border-light">
+                <h6 class="uc-dropdown-header">Students & Applicants</h6>
+                <a class="uc-dropdown-item" href="https://sis.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-person-badge"></i> Student Portal (SIS)</a>
+                <a class="uc-dropdown-item" href="https://admissions.uchenab.edu.pk/UCH.aspx" target="_blank"><i
+                    class="bi bi-file-earmark-text"></i> Admission Portal</a>
+              </div>
+              <!-- Admin Column -->
+              <div class="uc-dropdown-col">
+                <h6 class="uc-dropdown-header">Staff & Administration</h6>
+                <a class="uc-dropdown-item" href="https://fca.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-easel"></i> Faculty Portal (FCA)</a>
+                <a class="uc-dropdown-item" href="https://hms.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-people"></i> HRIMS (Human Resources)</a>
+                <a class="uc-dropdown-item" href="https://ums.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-shield-lock"></i> Admin Portal (UMS)</a>
+                <a class="uc-dropdown-item" href="https://fis.uchenab.edu.pk/" target="_blank"><i
+                    class="bi bi-wallet2"></i> Financial Info System</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -264,14 +304,116 @@
     </div>
   </div>
 
-  <section class="uc-page-hero">
-  <div class="container position-relative">
+  <style>
+  /* Premium Editorial Styles */
+  .uc-magazine-intro {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    line-height: 1.4;
+    color: var(--uc-primary);
+    font-family: var(--uc-serif);
+    font-weight: 400;
+  }
+  
+  /* Sleek Portrait Cards */
+  .uc-premium-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transform: translateY(0);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.2, 1), box-shadow 0.5s ease;
+  }
+  .uc-premium-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  }
+  .uc-premium-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.2, 1);
+  }
+  .uc-premium-card:hover img {
+    transform: scale(1.08);
+  }
+  .uc-premium-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11, 12, 42, 0.95) 0%, rgba(11, 12, 42, 0.4) 40%, rgba(11, 12, 42, 0) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2.5rem 2rem;
+    transition: background 0.5s ease;
+  }
+  .uc-premium-card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(11, 12, 42, 0.98) 0%, rgba(11, 12, 42, 0.7) 50%, rgba(11, 12, 42, 0.2) 100%);
+  }
+  
+  .uc-premium-card-content {
+    transform: translateY(25px);
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+  }
+  .uc-premium-card:hover .uc-premium-card-content {
+    transform: translateY(0);
+  }
+  .uc-premium-email {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+    transform: translateY(15px);
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .uc-premium-card:hover .uc-premium-email {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Split layout full height */
+  .uc-split-hero {
+    min-height: 85vh;
+  }
+  .uc-split-image {
+    min-height: 50vh;
+  }
+  @media (min-width: 992px) {
+    .uc-split-image {
+      min-height: 85vh;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .uc-split-image-right {
+      min-height: 85vh;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+    }
+  }
+</style>
+
+
+<!-- HERO -->
+<section class="uc-page-hero">
+  <div class="container position-relative" style="z-index: 1;">
     <div class="uc-crumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="index.html">Offices</a><span class="sep">/</span><span>Office of International Education &amp; Cooperation</span></div>
-    <span class="uc-eyebrow uc-eyebrow--light" style="color:var(--uc-gold)">Offices</span>
-    <h1 class="mt-2">Office of International Education &amp; Cooperation</h1>
-    <p class="lede">Promoting cultural exchange and global partnerships for UChenab.</p>
+    <span class="uc-eyebrow uc-eyebrow--light mt-4" style="color:var(--uc-gold)">Offices</span>
+    <h1 class="mt-2 text-white">Office of International Education &amp; Cooperation</h1>
+    <p class="lede text-white-50">Promoting cultural exchange and global partnerships for UChenab.</p>
   </div>
-</section><nav class="uc-subnav">
+</section>
+
+<nav class="uc-subnav">
   <div class="container">
     <div class="uc-subnav__inner">
       <ul class="uc-subnav__links">
@@ -284,10 +426,76 @@
       </form>
     </div>
   </div>
-</nav><section class="uc-content"><div class="container"><div class='row g-5'><div class='col-lg-8'><div class='uc-rich'><p>The mission of the Office of International Education &amp; Cooperation of The University of Chenab, Gujrat is to promote cultural exchange and broaden horizons through valuable collaborations, partnerships and exchange programs. UChenab establishes international partnerships with universities and organizations across the globe, enriching our academic environment with diversity and fostering critical thinking.</p>
-<h3 class='uc-rich-heading'>Meet the Team</h3>
-<p>Dr. Muneeb Bukhari is a highly experienced medical professional who has served as a Program Director at several Chinese medical universities under the Faculty/College of International Education. In this role, he has overseen and managed programs tailored for South Asian and African regions. Dr. Muneeb possesses extensive expertise in facilitating collaborations between universities to initiate international faculty and student exchange programs. His background underscores a profound understanding of global medical education and cross-cultural academic initiatives.</p>
-<p>Ms. Anastasiia Shalabanova is a distinguished expert in the field of International Relations, with a particular focus on multicultural educational platforms. Drawing on her extensive experience, she has developed a deep understanding of the impact of diverse cultural landscapes on educational paradigms, and is able to provide valuable insights into the challenges and opportunities presented by this complex area. Ms. Anastasiia’s expertise in International Relations and multicultural education is highly regarded by her colleagues and peers, and she is recognized as a leading authority in this field. Her ability to provide organizations with the tools and strategies needed to navigate this complex area is second to none, and her insights have helped many institutions to meet the needs of students from diverse cultural backgrounds.</p></div></div><div class='col-lg-4'><div class='uc-sidebar'><h4 class='uc-sidebar__title'>Offices</h4><nav class='d-grid'><a class='uc-sidebar-link' href='index.html'>Overview</a><a class='uc-sidebar-link' href='admissions.html'>Office of Admissions</a><a class='uc-sidebar-link is-active' href='international-education.html'>Office of International Education &amp; Cooperation</a><a class='uc-sidebar-link' href='press-media.html'>Office of Press, Media &amp; Publications</a><a class='uc-sidebar-link' href='registrar.html'>Office of Registrar</a><a class='uc-sidebar-link' href='../research/oric.html'>Office of Research, Innovation &amp; Commercialization</a><a class='uc-sidebar-link' href='student-affairs.html'>Office of Student Affairs</a></nav></div><div class='uc-callout mt-4'><h4>General Enquiries</h4><p class='mb-0'>info@uchenab.edu.pk<br>053 111 243 622</p></div></div></div></div></section><!-- ============ FOOTER ============ -->
+</nav>
+
+<!-- INTRO SECTION -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="uc-rich">
+          <h3 class="uc-rich-heading">Global Vision</h3>
+          <p>The mission of the Office of International Education &amp; Cooperation of The University of Chenab, Gujrat is to promote cultural exchange and broaden horizons through valuable collaborations, partnerships and exchange programs. UChenab establishes international partnerships with universities and organizations across the globe, enriching our academic environment with diversity and fostering critical thinking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ELEGANT TEAM GRID -->
+<section class="py-6 py-lg-8 bg-light" style="padding-top: 5rem; padding-bottom: 6rem;"> 
+  <div class="container">
+    <div class="text-center mb-6" style="margin-bottom: 4rem;">
+      <span style="font-family: var(--uc-ui); color: var(--uc-gold); letter-spacing: 4px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">Our Experts</span>
+      <h2 class="mt-3" style="font-family: var(--uc-serif); font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 400; color: var(--uc-primary);">Meet the Team</h2>
+      <div style="height: 1px; width: 60px; background-color: var(--uc-gold-2); margin: 24px auto 0;"></div>
+    </div>
+    
+    <div class="row g-5 justify-content-center">
+       
+       <!-- Team Member 1 -->
+       <div class="col-md-6 col-lg-5">
+          <div class="card h-100" style="border-radius: 12px; background-color: #fff; border: 1px solid rgba(34, 35, 98, 0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)'; this.style.borderColor='var(--uc-gold)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'; this.style.borderColor='rgba(34, 35, 98, 0.15)';">
+            <div class="p-2 pb-0">
+              <div class="overflow-hidden" style="border-radius: 8px; aspect-ratio: 4/3;">
+                <img src="../assets/images/team/muneeb-bukhari.jpg" alt="Dr. Muneeb Bukhari" class="w-100 h-100 object-fit-cover" style="object-position: top center; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" onerror="this.src='https://placehold.co/800x600/f8f9fa/222362?text=Dr.+Muneeb'">
+              </div>
+            </div>
+            <div class="card-body text-center p-4">
+              <h5 class="mb-1" style="font-family: var(--uc-serif); color: var(--uc-primary); font-weight: 600; font-size: 1.5rem;">Dr. Muneeb Bukhari</h5>
+              <p class="text-uppercase mb-4" style="font-family: var(--uc-sans); font-size: 0.8rem; letter-spacing: 2px; color: var(--uc-gold-2); font-weight: 600;">Program Director</p>
+              <p class="text-muted" style="font-size: 0.95rem; line-height: 1.7; text-align: justify;">
+                Dr. Muneeb Bukhari is a highly experienced medical professional who has served as a Program Director at several Chinese medical universities under the Faculty/College of International Education. In this role, he has overseen and managed programs tailored for South Asian and African regions. He possesses extensive expertise in facilitating collaborations between universities to initiate international faculty and student exchange programs.
+              </p>
+            </div>
+          </div>
+       </div>
+
+       <!-- Team Member 2 -->
+       <div class="col-md-6 col-lg-5">
+          <div class="card h-100" style="border-radius: 12px; background-color: #fff; border: 1px solid rgba(34, 35, 98, 0.15); box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 35px rgba(0,0,0,0.08)'; this.style.borderColor='var(--uc-gold)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.03)'; this.style.borderColor='rgba(34, 35, 98, 0.15)';">
+            <div class="p-2 pb-0">
+              <div class="overflow-hidden" style="border-radius: 8px; aspect-ratio: 4/3;">
+                <img src="../assets/images/team/anastasiia-shalabanova.jpg" alt="Ms. Anastasiia Shalabanova" class="w-100 h-100 object-fit-cover" style="object-position: top center; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" onerror="this.src='https://placehold.co/800x600/f8f9fa/222362?text=Anastasiia'">
+              </div>
+            </div>
+            <div class="card-body text-center p-4">
+              <h5 class="mb-1" style="font-family: var(--uc-serif); color: var(--uc-primary); font-weight: 600; font-size: 1.5rem;">Anastasiia Shalabanova</h5>
+              <p class="text-uppercase mb-4" style="font-family: var(--uc-sans); font-size: 0.8rem; letter-spacing: 2px; color: var(--uc-gold-2); font-weight: 600;">International Relations Expert</p>
+              <p class="text-muted" style="font-size: 0.95rem; line-height: 1.7; text-align: justify;">
+                Ms. Anastasiia Shalabanova is a distinguished expert in the field of International Relations, with a particular focus on multicultural educational platforms. Drawing on her extensive experience, she has developed a deep understanding of the impact of diverse cultural landscapes on educational paradigms, providing valuable insights into the challenges and opportunities presented by this complex area.
+              </p>
+            </div>
+          </div>
+       </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============ FOOTER ============ -->
   <footer class="uc-footer">
     <div class="container">
       <div class="row g-5">
@@ -312,8 +520,8 @@
             <li><a href="../about/index.html">About UChenab</a></li>
             <li><a href="../about/leadership.html">Leadership</a></li>
             <li><a href="../about/board-of-governors.html">Board of Governors</a></li>
-            <li><a href="../about/alumni.html">Alumni</a></li>
-            <li><a href="../about/careers.html">Careers</a></li>
+            <li><a href="../alumni/index.html">Alumni</a></li>
+            <li><a href="../career/index.html">Careers</a></li>
           </ul>
         </div>
         <div class="col-6 col-lg-2">
