@@ -265,7 +265,122 @@
     <h1 class="mt-2">The pulse of our campus.</h1>
     <p class="lede">News, events and stories from across UChenab.</p>
   </div>
-</section><section class="uc-content"><div class="container"><div class='row g-4'><div class='col-md-6'><article class='uc-tile'><span class='meta'>July 12, 2026 · ORIC</span><h5 class='mt-2'>ORIC Faculty Capacity Building Series concludes at UChenab</h5><p>A week-long series equipped faculty with new research and grant-writing skills, strengthening UChenab's research culture.</p></article></div><div class='col-md-6'><article class='uc-tile'><span class='meta'>June 28, 2026 · Governance</span><h5 class='mt-2'>4th Meeting of the Board of Governors held at UChenab</h5><p>The Board reviewed academic expansion, research strategy and the annual budget.</p></article></div><div class='col-md-6'><article class='uc-tile'><span class='meta'>June 15, 2026 · International</span><h5 class='mt-2'>Pakistan–China Academic Collaboration signed at UChenab</h5><p>UChenab formalised a new academic and research collaboration with Chinese partner institutions.</p></article></div><div class='col-md-6'><article class='uc-tile'><span class='meta'>May 30, 2026 · Student Life</span><h5 class='mt-2'>Societies Eve celebrates student creativity across UChenab</h5><p>An evening bringing together every student society for a showcase of talent, art and community.</p></article></div><div class='col-md-6'><article class='uc-tile'><span class='meta'>May 10, 2026 · Allied Health</span><h5 class='mt-2'>Diagnosing Your Future: Career Opportunities in MLT at UChenab</h5><p>A career session for aspiring medical laboratory technologists highlighted the growing demand for MLT graduates.</p></article></div></div></div></section><!-- ============ FOOTER ============ -->
+</section><style>
+.uc-news-card {
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05) !important;
+}
+.uc-news-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--uc-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.uc-news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08) !important;
+}
+.uc-news-card:hover::before {
+  transform: scaleX(1);
+}
+.uc-news-card-date {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  color: var(--uc-gold);
+}
+.uc-news-card-title {
+  color: var(--uc-primary);
+  font-family: var(--uc-serif);
+  line-height: 1.4;
+  font-size: 1.3rem;
+}
+</style>
+
+<section class="uc-content py-5" style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+  <div class="container py-5">
+    
+    <!-- Section Header -->
+    <div class="row justify-content-center mb-5 pb-3 text-center">
+      <div class="col-lg-8">
+        <h2 class="display-5 fw-bold mb-4" style="font-family: var(--uc-serif); color: var(--uc-primary);">University Updates &amp; Highlights</h2>
+        <p class="lead text-muted" style="line-height: 1.8;">Stay informed with the latest developments, academic milestones, and campus events from The University of Chenab. Discover how our community is driving research, innovation, and educational excellence forward.</p>
+      </div>
+    </div>
+
+    <!-- News Grid -->
+    <div class="row g-4">
+      
+      <!-- Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card h-100 shadow-sm uc-news-card">
+          <div class="card-body p-4 p-xl-5 d-flex flex-column">
+            <span class="text-uppercase fw-bold uc-news-card-date">July 12, 2026</span>
+            <h4 class="mt-3 mb-3 fw-bold uc-news-card-title">ORIC Faculty Capacity Building Series concludes at UChenab</h4>
+            <p class="text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.7;">A week-long series equipped faculty with new research and grant-writing skills, strengthening UChenab's research culture.</p>
+            <a href="#" class="mt-4 text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: var(--uc-gold); font-size: 0.95rem;">Read Story <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card h-100 shadow-sm uc-news-card">
+          <div class="card-body p-4 p-xl-5 d-flex flex-column">
+            <span class="text-uppercase fw-bold uc-news-card-date">June 28, 2026</span>
+            <h4 class="mt-3 mb-3 fw-bold uc-news-card-title">4th Meeting of the Board of Governors held at UChenab</h4>
+            <p class="text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.7;">The Board reviewed academic expansion, research strategy and the annual budget.</p>
+            <a href="#" class="mt-4 text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: var(--uc-gold); font-size: 0.95rem;">Read Story <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card h-100 shadow-sm uc-news-card">
+          <div class="card-body p-4 p-xl-5 d-flex flex-column">
+            <span class="text-uppercase fw-bold uc-news-card-date">June 15, 2026</span>
+            <h4 class="mt-3 mb-3 fw-bold uc-news-card-title">Pakistan–China Academic Collaboration signed at UChenab</h4>
+            <p class="text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.7;">UChenab formalised a new academic and research collaboration with Chinese partner institutions.</p>
+            <a href="#" class="mt-4 text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: var(--uc-gold); font-size: 0.95rem;">Read Story <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card h-100 shadow-sm uc-news-card">
+          <div class="card-body p-4 p-xl-5 d-flex flex-column">
+            <span class="text-uppercase fw-bold uc-news-card-date">May 30, 2026</span>
+            <h4 class="mt-3 mb-3 fw-bold uc-news-card-title">Societies Eve celebrates student creativity across UChenab</h4>
+            <p class="text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.7;">An evening bringing together every student society for a showcase of talent, art and community.</p>
+            <a href="#" class="mt-4 text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: var(--uc-gold); font-size: 0.95rem;">Read Story <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-6 col-lg-4">
+        <article class="card h-100 shadow-sm uc-news-card">
+          <div class="card-body p-4 p-xl-5 d-flex flex-column">
+            <span class="text-uppercase fw-bold uc-news-card-date">May 10, 2026</span>
+            <h4 class="mt-3 mb-3 fw-bold uc-news-card-title">Diagnosing Your Future: Career Opportunities in MLT at UChenab</h4>
+            <p class="text-muted flex-grow-1" style="font-size: 0.95rem; line-height: 1.7;">A career session for aspiring medical laboratory technologists highlighted the growing demand for MLT graduates.</p>
+            <a href="#" class="mt-4 text-decoration-none fw-semibold d-inline-flex align-items-center gap-2" style="color: var(--uc-gold); font-size: 0.95rem;">Read Story <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section><!-- ============ FOOTER ============ -->
   <footer class="uc-footer">
     <div class="container">
       <div class="row g-5">

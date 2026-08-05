@@ -169,7 +169,6 @@
           <div id="m-adm" class="accordion-collapse collapse" data-bs-parent="#ucMobileAcc">
             <div class="accordion-body">
               <a href="../admissions/index.html">Admissions</a>
-              <a href="../admissions/degree-finder.html">Degree Finder</a>
               <a href="../admissions/apply.html">Apply</a>
               <a href="../admissions/getting-info.html">Getting Info</a>
               <a href="../admissions/how-to-apply.html">How to Apply</a>
@@ -374,30 +373,14 @@
     transform: translateY(0);
   }
 
-  /* Split layout full height */
-  .uc-split-hero {
-    min-height: 85vh;
-  }
-  .uc-split-image {
-    min-height: 50vh;
-  }
-  @media (min-width: 992px) {
-    .uc-split-image {
-      min-height: 85vh;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 50%;
-    }
-  }
 </style>
-
 <!-- HERO -->
-<section class="uc-page-hero" style="background-image: url('../assets/images/admissions-office-bg.jpg'); background-size: cover; background-position: center; position: relative; padding: 100px 0 60px;">
-  <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: linear-gradient(90deg, rgba(34,35,98,0.95) 0%, rgba(34,35,98,0.7) 100%);"></div>
+<section class="uc-page-hero" style="background-image: url('../assets/images/admissions-office-bg.jpg'); background-size: cover; background-position: center; position: relative; padding: 120px 0 80px;">
+  <div style="position: absolute; top:0; left:0; right:0; bottom:0; background: linear-gradient(90deg, rgba(34,35,98,0.95) 0%, rgba(34,35,98,0.5) 100%);"></div>
   <div class="container position-relative" style="z-index: 1;">
-    <div class="uc-crumbs"><a href="../index.html">Home</a><span class="sep">/</span><a href="../admissions/index.html">Admissions</a><span class="sep">/</span><span>Meet the Team</span></div>
+    <div class="uc-crumbs mb-4"><a href="../index.html">Home</a><span class="sep">/</span><a href="../admissions/index.html">Admissions</a><span class="sep">/</span><span>Meet the Team</span></div>
+    <h1 class="text-white display-4 mb-3" style="font-family: var(--uc-serif); font-weight: 700; letter-spacing: -0.5px;">Admissions Experts</h1>
+    <p class="text-white-50 fs-5 mb-0" style="max-width: 600px; font-weight: 300;">Dedicated professionals committed to guiding you through every step of your University of Chenab journey.</p>
   </div>
 </section>
 
@@ -406,7 +389,6 @@
     <div class="uc-subnav__inner">
       <ul class="uc-subnav__links">
         <li><a href="../admissions/index.html">Overview</a></li>
-        <li><a href="../admissions/degree-finder.html">Degree Finder</a></li>
         <li><a href="../admissions/apply.html">Apply</a></li>
         <li><a href="../admissions/getting-info.html">Getting Info</a></li>
         <li><a href="../admissions/how-to-apply.html">How To Apply</a></li>
@@ -414,56 +396,69 @@
         <li><a class="is-active" href="../admissions/meet-the-team.html">Meet the Team</a></li>
       </ul>
       <div class="uc-subnav__hint">Scroll <i class="bi bi-chevron-double-right"></i></div>
-      <form class="uc-subnav__search" role="search" onsubmit="event.preventDefault(); document.querySelector('[data-uc-search]')?.click();">
-        <input type="search" placeholder="Search..." aria-label="Search" onclick="document.querySelector('[data-uc-search]')?.click(); this.blur();" />
-        <button type="button" aria-label="Search" onclick="document.querySelector('[data-uc-search]')?.click();"><i class="bi bi-search"></i></button>
-      </form>
     </div>
   </div>
 </nav>
-
 <!-- INTRO SECTION -->
-<section class="py-5 bg-white">
-  <div class="container">
-    <div class="row justify-content-center">
+<section class="py-5 position-relative" style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%); border-bottom: 1px solid rgba(0,0,0,0.03);">
+  <div class="container py-4">
+    <div class="row">
       <div class="col-lg-10">
-        <div class="uc-rich">
-          <h3 class="uc-rich-heading">Our Commitment</h3>
-          <p>The Admissions Office at The University of Chenab is committed to managing and coordinating the University’s admission processes in a transparent, fair, and student-centered manner. The office ensures that all admission-related activities comply with institutional policies, academic standards, and regulatory requirements, while upholding the University’s values of integrity and excellence.</p>
-          <p>Aligned with the University’s vision of academic growth and inclusivity, the Admissions Office strives to guide prospective students at every stage of the admission journey. Through clear communication, accurate information, and continuous support, the office facilitates a smooth and welcoming admission experience, enabling students and stakeholders to engage with confidence and clarity.</p>
-        </div>
+        <h3 class="mb-4" style="font-family: var(--uc-serif); font-size: 2.2rem; color: var(--uc-primary); font-weight: 600;">Our Commitment to You</h3>
+        <p class="lead mb-3" style="font-size: 1.15rem; line-height: 1.8; color: #444;">
+          The Admissions Office at The University of Chenab is committed to managing and coordinating the University’s admission processes in a transparent, fair, and student-centered manner. We ensure all activities comply with institutional policies and academic standards, while upholding the University’s values of integrity and excellence.
+        </p>
+        <p class="text-muted" style="font-size: 1rem; line-height: 1.7;">
+          Aligned with the University’s vision of academic growth and inclusivity, we strive to guide prospective students at every stage. Through clear communication and continuous support, we facilitate a smooth and welcoming admission experience, enabling students and stakeholders to engage with confidence and clarity.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CINEMATIC DEPUTY DIRECTOR SECTION -->
-<section class="position-relative bg-light overflow-hidden uc-split-hero">
-  <!-- Left Side Image -->
-  <div class="uc-split-image">
-    <img src="../assets/images/team/kashif-khurshid.jpg" alt="Kashif Khurshid" class="w-100 h-100 object-fit-cover" style="object-position: top center;" onerror="this.src='https://placehold.co/1200x1600/e2dfd5/222362?text=Kashif+Khurshid'">
-  </div>
-  
-  <!-- Right Side Content -->
-  <div class="container h-100">
-    <div class="row h-100 justify-content-end">
-      <div class="col-lg-6 d-flex align-items-center">
-        <div class="py-6 py-lg-0 ps-lg-6 position-relative z-1" style="padding-top: 4rem; padding-bottom: 4rem;">
-          <span style="font-family: var(--uc-ui); letter-spacing: 3px; font-weight: 700; color: var(--uc-gold-2); text-transform: uppercase; font-size: 0.9rem; display: block; margin-bottom: 1.5rem;">Leadership</span>
-          
-          <h2 style="font-family: var(--uc-serif); font-size: clamp(3.5rem, 6vw, 5.5rem); line-height: 1; margin-bottom: 1rem; color: var(--uc-primary); font-weight: 400; text-transform: uppercase;">
-            Kashif <br>
-            <span style="font-weight: 700;">Khurshid</span>
-          </h2>
-          
-          <h5 class="mb-4" style="font-family: var(--uc-sans); font-weight: 300; font-size: 1.6rem; letter-spacing: 1px; color: #555;">Deputy Director</h5>
-          
-          <p class="text-muted" style="font-size: 1.1rem; line-height: 1.8; max-width: 450px;">
-            Ensuring that all admission-related activities comply with institutional policies and academic standards, while upholding the University's values of integrity and excellence.
-          </p>
-          
-          <!-- Decorative watermark -->
-          <div class="d-none d-lg-block" style="position: absolute; right: -50px; bottom: -100px; font-family: var(--uc-serif); font-size: 14rem; color: rgba(34,35,98,0.03); font-weight: 900; line-height: 1; user-select: none; z-index: -1;">LEAD</div>
+<!-- ELEGANT LEADERSHIP SECTION -->
+<section class="py-6 bg-light" style="padding-top: 5rem; padding-bottom: 5rem;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xl-9 col-lg-10">
+        <div class="card rounded-4 overflow-hidden" style="border: 1px solid rgba(212,175,55,0.4); box-shadow: 0 20px 50px rgba(34, 35, 98, 0.08); background: #fff; position: relative;">
+          <!-- Decorative corner accent -->
+          <div style="position: absolute; top: 0; right: 0; width: 60px; height: 60px; background: linear-gradient(135deg, transparent 50%, rgba(212,175,55,0.1) 50%); border-top-right-radius: 1rem;"></div>
+          <div class="row g-0 align-items-center">
+            <div class="col-md-5">
+              <div style="aspect-ratio: 4/5; overflow: hidden; border-right: 1px solid rgba(212,175,55,0.2);">
+                <img src="../assets/images/team/kashif-khurshid.jpg" alt="Kashif Khurshid" class="w-100 h-100 object-fit-cover" style="object-position: top center; transition: transform 0.6s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';" onerror="this.src='https://placehold.co/800x1000/f4f4f4/222362?text=Kashif+Khurshid'">
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="p-4 p-md-5 position-relative">
+                <span class="d-inline-block mb-2" style="font-family: var(--uc-ui); letter-spacing: 2px; font-weight: 700; color: var(--uc-gold-2); text-transform: uppercase; font-size: 0.75rem;">Leadership</span>
+                
+                <h2 class="mb-1" style="font-family: var(--uc-serif); font-size: 2.2rem; color: var(--uc-primary); font-weight: 600; line-height: 1.2;">
+                  Kashif Khurshid
+                </h2>
+                
+                <h5 class="mb-4" style="font-family: var(--uc-sans); font-weight: 400; font-size: 1.05rem; color: #777; letter-spacing: 1px; text-transform: uppercase;">Deputy Director</h5>
+                
+                <div style="height: 2px; width: 40px; background-color: var(--uc-gold); margin-bottom: 1.5rem;"></div>
+                
+                <p class="text-muted mb-4" style="font-size: 0.95rem; line-height: 1.8;">
+                  Ensuring that all admission-related activities comply with institutional policies and academic standards, while upholding the University's values of integrity and excellence.
+                </p>
+                
+                <div class="d-flex flex-column gap-2 mt-4 pt-3" style="border-top: 1px solid rgba(0,0,0,0.05);">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-envelope me-3 fs-5" style="color: var(--uc-gold-2);"></i>
+                    <a href="mailto:kashif.khurshid@uchenab.edu.pk" class="text-decoration-none text-dark" style="font-family: var(--uc-sans); font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease;" onmouseover="this.style.color='var(--uc-gold-2)';" onmouseout="this.style.color='#212529';">kashif.khurshid@uchenab.edu.pk</a>
+                  </div>
+                  <div class="d-flex align-items-center mt-2">
+                    <i class="bi bi-telephone me-3 fs-5" style="color: var(--uc-gold-2);"></i>
+                    <a href="tel:+9253111243622" class="text-decoration-none text-dark" style="font-family: var(--uc-sans); font-size: 0.95rem; font-weight: 500; transition: color 0.3s ease;" onmouseover="this.style.color='var(--uc-gold-2)';" onmouseout="this.style.color='#212529';">+92 53 111 243 622 <span class="text-muted fw-normal ms-1" style="font-size: 0.85rem;">(Ext: 110)</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

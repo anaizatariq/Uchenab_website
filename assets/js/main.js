@@ -14,16 +14,55 @@
   if (searchForm) {
     searchForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      var input = searchForm.querySelector("input").value;
-      if (input.trim() !== "") {
-        // Calculate relative path to root based on current location
-        var rootPath = document.querySelector('a.navbar-brand') ? document.querySelector('a.navbar-brand').getAttribute('href').replace('index.html', '').replace('./', '') : '';
-        if (rootPath === '') {
-          var depth = window.location.pathname.split('/').length - 2;
-          if (depth > 0) rootPath = '../'.repeat(depth);
-          else rootPath = './';
+      var input = searchForm.querySelector("input").value.toLowerCase().trim();
+      if (input !== "") {
+        var brand = document.querySelector('a.navbar-brand');
+        var rootPath = brand ? brand.getAttribute('href').split('index.html')[0] : '';
+        if (rootPath === '') rootPath = './';
+
+        // Direct mapping for program pages
+        var programMap = [
+          { keys: ['computer science', 'cs', 'bs cs'], url: 'academics/ug-computer-science-bs.html' },
+          { keys: ['ms computer science', 'ms cs'], url: 'academics/pg-computer-science-ms.html' },
+          { keys: ['software engineering', 'software', 'se'], url: 'academics/ug-software-engineering-bs.html' },
+          { keys: ['data science', 'ds'], url: 'academics/ug-data-science-bsds.html' },
+          { keys: ['bba', 'business administration', 'business'], url: 'academics/ug-business-administration-bba.html' },
+          { keys: ['mba', 'management sciences'], url: 'academics/pg-management-sciences-mphil.html' },
+          { keys: ['pharmacy', 'pharm-d', 'pharmd'], url: 'academics/ug-doctor-of-pharmacy-pharm-d.html' },
+          { keys: ['dpt', 'physical therapy', 'physiotherapy'], url: 'academics/ug-doctor-of-physio-therapy-dpt.html' },
+          { keys: ['nursing', 'bsn'], url: 'academics/ug-bachelor-of-science-in-nursing.html' },
+          { keys: ['mlt', 'medical lab', 'laboratory'], url: 'academics/ug-medical-lab-sciences-bs.html' },
+          { keys: ['imaging', 'radiology', 'mit'], url: 'academics/ug-medical-imaging-sciences-bs.html' },
+          { keys: ['nutrition', 'dietetics', 'hnd'], url: 'academics/ug-dietetics-and-nutritional-sciences.html' },
+          { keys: ['optometry', 'vision'], url: 'academics/ug-bs-optometry-and-vision-sciences.html' },
+          { keys: ['law', 'llb'], url: 'academics/ug-llb.html' },
+          { keys: ['accounting', 'finance', 'baf'], url: 'academics/ug-accounting-and-finance-bs.html' },
+          { keys: ['english', 'literature', 'linguistics'], url: 'academics/ug-bs-english.html' },
+          { keys: ['psychology', 'clinical'], url: 'academics/ug-bachelor-of-science-in-psychology.html' },
+          { keys: ['math', 'mathematics'], url: 'academics/ug-mathematics-bs.html' },
+          { keys: ['physics'], url: 'academics/ug-physics-bs.html' },
+          { keys: ['sports', 'physical education'], url: 'academics/ug-bs-sports-science-and-physical-education.html' },
+          { keys: ['civil', 'engineering'], url: 'academics/ug-civil-engineering-technology-bsc.html' }
+        ];
+
+        var targetUrl = '';
+        for (var i = 0; i < programMap.length; i++) {
+          var matched = programMap[i].keys.some(function(key) {
+            var regex = new RegExp('\\b' + key.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\$&') + '\\b', 'i');
+            return regex.test(input);
+          });
+          if (matched) {
+            targetUrl = programMap[i].url;
+            break;
+          }
         }
-        window.location.href = rootPath + "search.html?q=" + encodeURIComponent(input);
+
+        if (targetUrl !== '') {
+          window.location.href = rootPath + targetUrl;
+        } else {
+          // Fallback if no specific page found
+          window.location.href = rootPath + "admissions/degree-finder.html?q=" + encodeURIComponent(input);
+        }
       }
     });
   }
