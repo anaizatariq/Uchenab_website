@@ -142,17 +142,53 @@
       <h5 class="offcanvas-title" id="ucMobileNavLabel">Menu</h5>
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div class="offcanvas-body">
-      <!-- (Offcanvas content matches other pages) -->
-      <div class="accordion accordion-flush" id="ucMobileAcc">
+    <div class="offcanvas-body d-flex flex-column">
+      <div class="accordion accordion-flush flex-grow-1" id="ucMobileAcc">
         <div class="accordion-item"><a href="../index.html" class="uc-mobile__link">Home</a></div>
-        <!-- Simplified for brevity, matches other pages -->
+        <div class="accordion-item"><a href="../about/index.html" class="uc-mobile__link">About</a></div>
+        <div class="accordion-item"><a href="../admissions/index.html" class="uc-mobile__link">Admissions</a></div>
+        <div class="accordion-item"><a href="../scholarships/index.html" class="uc-mobile__link">Scholarships &amp; Aid</a></div>
+        <div class="accordion-item"><a href="../academics/index.html" class="uc-mobile__link">Academics</a></div>
+        <div class="accordion-item"><a href="../campus-life/index.html" class="uc-mobile__link">Life at UChenab</a></div>
+        <div class="accordion-item"><a href="../qec/index.html" class="uc-mobile__link">QEC</a></div>
+        <div class="accordion-item"><a href="../research/index.html" class="uc-mobile__link">Research</a></div>
+        <div class="accordion-item"><a href="../offices/index.html" class="uc-mobile__link">Offices</a></div>
+        <div class="accordion-item"><a href="../career/index.html" class="uc-mobile__link">Careers</a></div>
+        <div class="accordion-item"><a href="../alumni/index.html" class="uc-mobile__link">Alumni</a></div>
+
+        <div class="accordion-item border-bottom-0">
+          <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#m-portals">UChenab Portals</button></h2>
+          <div id="m-portals" class="accordion-collapse collapse" data-bs-parent="#ucMobileAcc">
+            <div class="accordion-body px-0 pt-0 pb-3">
+              <h6 class="text-muted small mb-2 text-uppercase fw-bold mt-2">Students &amp; Applicants</h6>
+              <a href="https://sis.uchenab.edu.pk/" target="_blank" class="d-block py-2 text-decoration-none text-dark"><i class="bi bi-person-badge text-muted me-2"></i> Student Portal (SIS)</a>
+              <a href="https://admissions.uchenab.edu.pk/UCH.aspx" target="_blank" class="d-block py-2 text-decoration-none text-dark"><i class="bi bi-file-earmark-text text-muted me-2"></i> Admission Portal</a>
+              <h6 class="text-muted small mb-2 text-uppercase fw-bold mt-4">Staff &amp; Administration</h6>
+              <a href="https://fca.uchenab.edu.pk/" target="_blank" class="d-block py-2 text-decoration-none text-dark"><i class="bi bi-easel text-muted me-2"></i> Faculty Portal (FCA)</a>
+              <a href="https://hms.uchenab.edu.pk/" target="_blank" class="d-block py-2 text-decoration-none text-dark"><i class="bi bi-people text-muted me-2"></i> HRIMS (Human Resources)</a>
+              <a href="https://ums.uchenab.edu.pk/" target="_blank" class="d-block py-2 text-decoration-none text-dark"><i class="bi bi-shield-lock text-muted me-2"></i> Admin Portal (UMS)</a>
+              <a href="https://fis.uchenab.edu.pk/" target="_blank" class="d-block py-2 text-decoration-none text-dark"><i class="bi bi-wallet2 text-muted me-2"></i> Financial Info System</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="mt-4 d-grid gap-2">
-        <a href="https://admissions.uchenab.edu.pk/Login.aspx" class="btn uc-btn uc-btn--primary text-nowrap">Apply Now</a>
-        <a href="https://sis.uchenab.edu.pk/" class="btn uc-btn uc-btn--ghost">Student Portal</a>
-      </div>
-    </div>
+
+      <div class="mt-4 pt-4 border-top">
+        <a href="https://admissions.uchenab.edu.pk/Login.aspx" class="btn uc-btn uc-btn--primary text-nowrap w-100 mb-4">Apply Now</a>
+        
+        <div class="d-flex align-items-center justify-content-center gap-4 uc-social mb-4">
+          <a href="https://www.facebook.com/uchenab.grt" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook fs-5"></i></a>
+          <a href="https://www.instagram.com/uchenab_official/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram fs-5"></i></a>
+          <a href="https://www.linkedin.com/company/the-university-of-chenab-gujrat/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>
+          <a href="https://www.youtube.com/@uchenab_grt" target="_blank" rel="noopener" aria-label="YouTube"><i class="bi bi-youtube fs-5"></i></a>
+        </div>
+
+        <div class="small text-muted text-center pb-3">
+          <div class="mb-2"><i class="bi bi-geo-alt"></i> Adjacent Chenab Bridge, G.T. Road, Gujrat</div>
+          <div class="mb-2"><i class="bi bi-telephone"></i> 053 111 243 622</div>
+          <div><i class="bi bi-envelope"></i> info@uchenab.edu.pk</div>
+        </div>
+      </div></div>
   </div>
 
   <section class="uc-page-hero">

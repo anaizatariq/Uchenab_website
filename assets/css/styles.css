@@ -4194,3 +4194,147 @@ body {
   background: var(--uc-primary) !important;
   color: #fff !important;
 }
+
+/* ==========================================================================
+   PROGRAM PAGE MOBILE UX OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 991.98px) {
+  /* Hero Section Adjustments */
+  .uc-program-title {
+    font-size: 2.25rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+  }
+  
+  .uc-program-subtitle {
+    font-size: 1.1rem !important;
+  }
+  
+  .uc-program-hero {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+  
+  /* Fix buttons layout on mobile: stack them with proper spacing */
+  .uc-program-hero__content .mt-5 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem;
+    margin-top: 2rem !important;
+  }
+  
+  .uc-program-hero__content .mt-5 .btn {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+
+  /* Quick Stats Grid Adjustments */
+  .uc-stats-bar {
+    border-radius: var(--uc-radius);
+  }
+  
+  .uc-stat-item {
+    padding: 1.5rem 1rem;
+    border-bottom: 1px solid var(--uc-line);
+  }
+  
+  /* On mobile (col-6), it's a 2-column grid. Remove right border from even items */
+  .uc-stat-item:nth-child(even) {
+    border-right: none !important;
+  }
+  
+  /* Remove bottom border from the last row (last two items if there's 4) */
+  .uc-stat-item:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+  
+  .uc-stat-value {
+    font-size: 1.25rem;
+  }
+  
+  .uc-stat-label {
+    font-size: 0.75rem;
+  }
+
+  /* Rich Content (Details Section) Adjustments */
+  .uc-rich-heading {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+    line-height: 1.3;
+  }
+  
+  .uc-editorial-text {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .uc-rich-list {
+    padding-left: 1.25rem;
+  }
+  
+  .uc-rich-list li {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+
+
+/* ==========================================================================
+   PREMIUM BACK BUTTON
+   ========================================================================== */
+.uc-back-link {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.6rem 1.25rem !important;
+  border-radius: 50px;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  font-family: var(--uc-ui);
+  width: fit-content;
+}
+
+.uc-back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  color: #fff !important;
+}
+
+.uc-back-link i {
+  font-size: 1.1rem;
+  margin-right: 0 !important;
+  transition: transform 0.3s ease;
+}
+
+.uc-back-link:hover i {
+  transform: translateX(-4px);
+}
+
+/* Override padding for fee subtable */
+.uc-fee-subtable td {
+  padding: 0.75rem 1.25rem !important;
+  font-size: 0.95rem;
+  border-color: rgba(0,0,0,0.05);
+}
+.uc-fee-subtable td:first-child {
+  font-weight: 500;
+  color: var(--uc-muted);
+  width: 60%;
+}
+.uc-fee-subtable td:last-child {
+  font-weight: 600;
+  color: var(--uc-primary);
+}
+
