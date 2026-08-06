@@ -166,219 +166,90 @@
     }
   });
 
-
   // ==========================================================================
-  // PROGRAM PAGE MOBILE UX - DYNAMIC ACCORDION CONVERSION
-  // Converts long scrolling sections into a sleek accordion on mobile.
+  // PROGRAM PAGE REFINEMENTS (MOBILE NAV & FEE CLEANUP)
   // ==========================================================================
+  
+  // 1. Generate Mobile Sticky Nav (Pills)
   if (window.innerWidth < 992) {
-    var programDetailsContainer = document.querySelector('.col-lg-9[data-bs-spy="scroll"]');
-    if (programDetailsContainer) {
-      var sections = programDetailsContainer.querySelectorAll('section[id]');
-      if (sections.length > 0) {
-        programDetailsContainer.classList.add('accordion', 'uc-mobile-program-accordion');
-        programDetailsContainer.id = 'programAccordion';
-        programDetailsContainer.removeAttribute('data-bs-spy');
+    var programSidebar = document.querySelector('.uc-program-sidebar');
+    var programContent = document.querySelector('.col-lg-9[data-bs-spy="scroll"]');
+    
+    if (programSidebar && programContent) {
+      var links = programSidebar.querySelectorAll('a.uc-sidebar-link');
+      if (links.length > 0) {
+        var mobileNav = document.createElement('div');
+        mobileNav.className = 'uc-mobile-sticky-nav';
         
-        // Add a mobile header for the sections
-        var mobileHeader = document.createElement('h3');
-        mobileHeader.className = 'mb-4 mt-2';
-        mobileHeader.style.fontFamily = 'var(--uc-serif)';
-        mobileHeader.style.fontSize = '1.75rem';
-        mobileHeader.style.fontWeight = '700';
-        mobileHeader.style.color = 'var(--uc-primary)';
-        mobileHeader.textContent = 'Program Details';
-        programDetailsContainer.insertBefore(mobileHeader, programDetailsContainer.firstChild);
-        
-        sections.forEach(function(sec, index) {
-          var titleEl = sec.querySelector('.uc-section-title');
-          if (!titleEl) return;
+        links.forEach(function(link) {
+          var clone = link.cloneNode(true);
+          clone.className = 'uc-mobile-nav-link';
           
-          var title = titleEl.textContent;
-          var content = sec.querySelector('.uc-rich');
-          var sectionId = sec.id;
-          
-          var accItem = document.createElement('div');
-          accItem.className = 'accordion-item border-0 mb-3 rounded overflow-hidden';
-          accItem.style.boxShadow = '0 4px 15px rgba(0,0,0,0.03)';
-          
-          var accHeader = document.createElement('h2');
-          accHeader.className = 'accordion-header';
-          accHeader.id = 'heading-' + sectionId;
-          
-          var accBtn = document.createElement('button');
-          accBtn.className = 'accordion-button' + (index === 0 ? '' : ' collapsed');
-          accBtn.type = 'button';
-          accBtn.setAttribute('data-bs-toggle', 'collapse');
-          accBtn.setAttribute('data-bs-target', '#collapse-' + sectionId);
-          accBtn.setAttribute('aria-expanded', index === 0 ? 'true' : 'false');
-          accBtn.setAttribute('aria-controls', 'collapse-' + sectionId);
-          accBtn.style.fontFamily = 'var(--uc-ui)';
-          accBtn.style.fontSize = '1rem';
-          accBtn.style.fontWeight = '600';
-          accBtn.style.color = 'var(--uc-primary)';
-          accBtn.style.backgroundColor = '#fff';
-          accBtn.style.padding = '1.25rem 1.5rem';
-          accBtn.textContent = title;
-          
-          var accCollapse = document.createElement('div');
-          accCollapse.id = 'collapse-' + sectionId;
-          accCollapse.className = 'accordion-collapse collapse' + (index === 0 ? ' show' : '');
-          accCollapse.setAttribute('aria-labelledby', 'heading-' + sectionId);
-          accCollapse.setAttribute('data-bs-parent', '#programAccordion');
-          
-          var accBody = document.createElement('div');
-          accBody.className = 'accordion-body pt-2 pb-4 px-4';
-          accBody.style.backgroundColor = '#fff';
-          
-          if (content) {
-              accBody.appendChild(content);
-          } else {
-              while (sec.firstChild) {
-                  if (sec.firstChild !== titleEl) {
-                      accBody.appendChild(sec.firstChild);
-                  } else {
-                      sec.removeChild(sec.firstChild);
-                  }
-              }
-          }
-          
-          accHeader.appendChild(accBtn);
-          accCollapse.appendChild(accBody);
-          accItem.appendChild(accHeader);
-          accItem.appendChild(accCollapse);
-          
-          programDetailsContainer.insertBefore(accItem, sec);
-          sec.remove();
+          clone.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Manage active state
+            var allLinks = mobileNav.querySelectorAll('.uc-mobile-nav-link');
+            allLinks.forEach(function(l) { l.classList.remove('active'); });
+            this.classList.add('active');
+            
+            var targetId = this.getAttribute('href');
+            var targetEl = document.querySelector(targetId);
+            if(targetEl) {
+               var offset = 120; // sticky nav height + header
+               window.scrollTo({
+                 top: targetEl.offsetTop - offset,
+                 behavior: 'smooth'
+               });
+            }
+          });
+          mobileNav.appendChild(clone);
         });
+        
+        programContent.parentNode.insertBefore(mobileNav, programContent);
       }
     }
   }
 
-
-  // ==========================================================================
-  // FEE STRUCTURE TABLE ACCORDION CONVERTER & CLEANUP
-  // Cleans up cluttered headings and converts long fee tables into nice accordions.
-  // ==========================================================================
+  // 2. Clean Fee Tables
   var feeTables = document.querySelectorAll('.uc-fee-table');
-  feeTables.forEach(function(table, tableIndex) {
-    var tbody = table.querySelector('tbody');
-    if (!tbody) return;
-    var rows = Array.from(tbody.querySelectorAll('tr'));
-    
-    // Clean up redundant headings above the table
+  feeTables.forEach(function(table) {
+    // Hide cluttered headings
     var container = table.closest('.uc-rich');
     if (container) {
        var headings = container.querySelectorAll('h3.uc-rich-heading, h4.uc-rich-heading');
        headings.forEach(function(h) {
           var text = h.textContent.toLowerCase();
-          // Remove messy repeated titles
-          if (text.includes('fee structure') || text.includes('department of') || text.includes('bs ') || text.includes('doctor of')) {
+          if (text.includes('fee structure') || text.includes('department of') || text.includes('bs ') || text.includes('doctor of') || text.includes('tuition fee')) {
              h.style.display = 'none';
           }
        });
     }
 
-    var blocks = [];
-    var currentBlock = null;
+    var tbody = table.querySelector('tbody');
+    if (!tbody) return;
+    var rows = Array.from(tbody.querySelectorAll('tr'));
     
     rows.forEach(function(row) {
        var cells = row.querySelectorAll('td, th');
        if (cells.length === 0) return;
-       var firstCellText = cells[0].textContent.trim().toLowerCase();
-       var secondCellText = cells.length > 1 ? cells[1].textContent.trim() : '';
+       var text = cells[0].textContent.trim().toLowerCase();
        
-       if (firstCellText === 'semester' || firstCellText.includes('semester') && !firstCellText.includes('total')) {
-           var semName = secondCellText || firstCellText; 
-           if (firstCellText === 'semester' && secondCellText) {
-               semName = secondCellText + ' Semester';
-           } else if (firstCellText.includes('semester') && !secondCellText) {
-               semName = cells[0].textContent.trim();
-           } else if (firstCellText.includes('semester') && secondCellText) {
-               semName = secondCellText + ' Semester';
-           }
-           currentBlock = { title: semName, rows: [], isTotal: false };
-           blocks.push(currentBlock);
-       } else if (firstCellText === 'total' || firstCellText === 'total semesters fee' || firstCellText === 'registration fee' || firstCellText === 'total fee' || firstCellText.includes('payable once')) {
-           if (!currentBlock || !currentBlock.isTotal) {
-               currentBlock = { title: 'Program Fee Summary', rows: [], isTotal: true };
-               blocks.push(currentBlock);
-           }
-           currentBlock.rows.push(row);
-       } else {
-           if (currentBlock) {
-               currentBlock.rows.push(row);
-           } else {
-               currentBlock = { title: 'General Details', rows: [row], isTotal: false };
-               blocks.push(currentBlock);
-           }
+       if (text === 'semester' || text.includes('semester') && !text.includes('total')) {
+           row.classList.add('uc-fee-semester-row');
+       } else if (text.includes('total') || text.includes('registration fee') || text.includes('payable once')) {
+           row.classList.add('uc-fee-total-row');
        }
-    });
-
-    if (blocks.length > 2) {
-       var accordion = document.createElement('div');
-       accordion.className = 'accordion accordion-flush fee-accordion mt-2';
-       accordion.id = 'feeAcc-' + tableIndex;
        
-       blocks.forEach(function(block, bIndex) {
-           var item = document.createElement('div');
-           item.className = 'accordion-item border rounded mb-2 overflow-hidden shadow-sm';
-           
-           var header = document.createElement('h2');
-           header.className = 'accordion-header';
-           
-           var btn = document.createElement('button');
-           btn.className = 'accordion-button' + (bIndex === 0 ? '' : ' collapsed');
-           btn.type = 'button';
-           btn.setAttribute('data-bs-toggle', 'collapse');
-           btn.setAttribute('data-bs-target', '#feeCollapse-' + tableIndex + '-' + bIndex);
-           btn.style.fontFamily = 'var(--uc-ui)';
-           btn.style.fontWeight = '600';
-           btn.style.backgroundColor = block.isTotal ? 'rgba(240, 178, 58, 0.1)' : 'var(--uc-cream-2)';
-           btn.style.color = 'var(--uc-primary)';
-           
-           var cleanTitle = block.title.replace(/strong/ig, '').trim();
-           btn.textContent = cleanTitle.toUpperCase();
-           
-           header.appendChild(btn);
-           
-           var collapse = document.createElement('div');
-           collapse.id = 'feeCollapse-' + tableIndex + '-' + bIndex;
-           collapse.className = 'accordion-collapse collapse' + (bIndex === 0 ? ' show' : '');
-           collapse.setAttribute('data-bs-parent', '#feeAcc-' + tableIndex);
-           
-           var body = document.createElement('div');
-           body.className = 'accordion-body p-0';
-           
-           var subTable = document.createElement('table');
-           subTable.className = 'table table-borderless mb-0 uc-fee-subtable m-0';
-           var subTbody = document.createElement('tbody');
-           
-           block.rows.forEach(function(r) {
-               var clone = r.cloneNode(true);
-               // Clean up any inner HTML like h4 or strong for cleaner look
-               clone.querySelectorAll('h4, strong, h3').forEach(function(el) {
-                   var txt = document.createTextNode(el.textContent);
-                   el.parentNode.replaceChild(txt, el);
-               });
-               subTbody.appendChild(clone);
+       // Clean up strong/h4 tags inside cells to reduce bloat
+       cells.forEach(function(cell) {
+           var inners = cell.querySelectorAll('h4, h3, strong, b');
+           inners.forEach(function(inner) {
+               var txt = document.createTextNode(inner.textContent);
+               inner.parentNode.replaceChild(txt, inner);
            });
-           
-           subTable.appendChild(subTbody);
-           body.appendChild(subTable);
-           collapse.appendChild(body);
-           
-           item.appendChild(header);
-           item.appendChild(collapse);
-           accordion.appendChild(item);
        });
-       
-       var tableWrapper = table.closest('.table-responsive');
-       if (tableWrapper) {
-           tableWrapper.parentNode.insertBefore(accordion, tableWrapper);
-           tableWrapper.style.display = 'none';
-       }
-    }
+    });
   });
 
 })();
